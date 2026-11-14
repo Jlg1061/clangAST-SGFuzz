@@ -1,0 +1,1 @@
+ASAN_OPTIONS=detect_leaks=0 /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-line-direct-unscoped-control-20261114T161828Z/ast/line-direct-unscoped-control_sfuzzer -runs=0 /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-line-direct-unscoped-control-20261114T161828Z/ast/source/seeds 

@@ -1,0 +1,20 @@
+{
+  "schema": "clangast-sgfuzz-regression-controls-index-v1",
+  "plan": "experiments/regression-controls.json",
+  "runs": [
+    {
+      "case": "line-direct-unscoped-control",
+      "raw_dir": "raw/mechanism-comparison-line-direct-unscoped-control-20261114T161828Z"
+    },
+    {
+      "case": "line-direct-scoped-variant",
+      "raw_dir": "raw/mechanism-comparison-line-direct-scoped-variant-20261114T161829Z"
+    },
+    {
+      "case": "line-atomic-unscoped-variant",
+      "raw_dir": "raw/mechanism-comparison-line-atomic-unscoped-variant-20261114T161830Z"
+    }
+  ],
+  "failed_case": "c-direct-enum-control",
+  "returncode": 1
+}

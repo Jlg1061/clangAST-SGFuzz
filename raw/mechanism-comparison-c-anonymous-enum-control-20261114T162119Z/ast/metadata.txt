@@ -1,0 +1,9 @@
+case=c-anonymous-enum-control
+mode=ast
+sgfuzz_commit=35f1ffc9482d524b03e54c7a48f4a742ba9fc9a3
+sgfuzz_library_sha256=783e83c4102e0490f4ee828c40041f01a2018f9f6d9ead14b6c963dd4ab50559
+compiler=Debian clang version 14.0.6
+target_before_sha256=2914e37c642c4a00df312b0cc7f02495ac3e23042aeb50406373fb0f3e8fa867
+target_after_sha256=a7238381d471b263e908fbf2074091b444188ae2759ad7308cf3c0194631019a
+target_callback_sites=2
+#3	DONE   cov: 4 ft: 5 corp: 1/3b lim: 4 exec/s: 0 rss: 31Mb states: 3 leaves: 1

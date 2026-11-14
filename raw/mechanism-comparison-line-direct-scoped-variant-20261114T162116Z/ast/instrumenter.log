@@ -1,0 +1,2 @@
+instrumented 1 callback site(s) in copied source: /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-line-direct-scoped-variant-20261114T162116Z/ast/source
+manifest: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-line-direct-scoped-variant-20261114T162116Z/ast/instrumentation-manifest.json

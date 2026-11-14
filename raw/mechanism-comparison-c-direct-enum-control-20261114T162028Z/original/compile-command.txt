@@ -1,0 +1,1 @@
+clang -std=gnu11 -g -O1 -fno-omit-frame-pointer -fsanitize=address\,undefined\,fuzzer-no-link -c /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162028Z/original/source/target.c -o /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162028Z/original/target.o 

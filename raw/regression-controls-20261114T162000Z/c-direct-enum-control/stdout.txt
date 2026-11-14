@@ -1,0 +1,2 @@
+Completed deterministic mechanism comparison: c-direct-enum-control
+Raw evidence: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-c-direct-enum-control-20261114T161925Z

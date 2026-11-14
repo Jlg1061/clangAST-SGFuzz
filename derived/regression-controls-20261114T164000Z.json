@@ -1,0 +1,157 @@
+{
+  "schema": "clangast-sgfuzz-regression-controls-result-v1",
+  "experiment_index": "raw/regression-controls-20261114T164000Z/index.json",
+  "all_expected_outcomes_matched": true,
+  "rows": [
+    {
+      "case": "line-direct-unscoped-control",
+      "role": "baseline-preservation control",
+      "regex": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "pass": true
+      },
+      "ast": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "pass": true
+      }
+    },
+    {
+      "case": "line-direct-scoped-variant",
+      "role": "scoped-enum mechanism control",
+      "regex": {
+        "expected": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "pass": true
+      },
+      "ast": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "pass": true
+      }
+    },
+    {
+      "case": "line-atomic-unscoped-variant",
+      "role": "atomic-enum mechanism control",
+      "regex": {
+        "expected": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "pass": true
+      },
+      "ast": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 4,
+          "leaves": 1
+        },
+        "pass": true
+      }
+    },
+    {
+      "case": "c-direct-enum-control",
+      "role": "C-language baseline-preservation control",
+      "regex": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 5,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 5,
+          "leaves": 1
+        },
+        "pass": true
+      },
+      "ast": {
+        "expected": {
+          "callback_sites": 1,
+          "states": 5,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 1,
+          "states": 5,
+          "leaves": 1
+        },
+        "pass": true
+      }
+    },
+    {
+      "case": "c-anonymous-enum-control",
+      "role": "anonymous-C-enum regression control",
+      "regex": {
+        "expected": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 0,
+          "states": 1,
+          "leaves": 1
+        },
+        "pass": true
+      },
+      "ast": {
+        "expected": {
+          "callback_sites": 2,
+          "states": 3,
+          "leaves": 1
+        },
+        "observed": {
+          "callback_sites": 2,
+          "states": 3,
+          "leaves": 1
+        },
+        "pass": true
+      }
+    }
+  ]
+}

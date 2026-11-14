@@ -17,3 +17,14 @@ submission. AI was not used as evidence in place of a command, log, source
 file, or calculation. Future final-project experiments will record their
 commands and raw output under `raw/` and update this disclosure if material
 AI assistance is used.
+
+## Final-project regression controls
+
+Codex helped add the C replay harness, pre-registered control plan, runner,
+and derivation script. The authors verified this work with shell syntax and
+Python compilation checks, the nine-check AST integration suite, direct review
+of the raw compiler/replay logs, and the successful complete control run at
+`raw/regression-controls-20261114T164000Z/index.json`. The derived result is
+`derived/regression-controls-20261114T164000Z.md`. The two retained setup
+failures and the derivation-parser failure are documented in `raw/README.md`;
+they were not omitted or treated as successful measurements.

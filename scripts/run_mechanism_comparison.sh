@@ -5,13 +5,13 @@
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 line-direct-unscoped-control|line-direct-scoped-variant|line-atomic-unscoped-variant|ixwebsocket-primary" >&2
+    echo "Usage: $0 line-direct-unscoped-control|line-direct-scoped-variant|line-atomic-unscoped-variant|c-direct-enum-control|c-anonymous-enum-control|ixwebsocket-primary" >&2
     exit 64
 fi
 
 case_name="$1"
 case "$case_name" in
-    line-direct-unscoped-control|line-direct-scoped-variant|line-atomic-unscoped-variant|ixwebsocket-primary) ;;
+    line-direct-unscoped-control|line-direct-scoped-variant|line-atomic-unscoped-variant|c-direct-enum-control|c-anonymous-enum-control|ixwebsocket-primary) ;;
     *) echo "Unknown case: $case_name" >&2; exit 64 ;;
 esac
 
@@ -70,12 +70,13 @@ record_common_metadata() {
     local target_after="$4"
     local callbacks="$5"
     local replay_log="$6"
+    local compiler="$7"
     {
         printf 'case=%s\n' "$case_name"
         printf 'mode=%s\n' "$mode"
         printf 'sgfuzz_commit=%s\n' "$(git -C "$sgfuzz_dir" rev-parse HEAD)"
         printf 'sgfuzz_library_sha256=%s\n' "$(sha256sum "$sgfuzz_dir/libsfuzzer.a" | awk '{print $1}')"
-        printf 'compiler=%s\n' "$(clang++ --version | head -n 1)"
+        printf 'compiler=%s\n' "$("$compiler" --version | head -n 1)"
         printf 'target_before_sha256=%s\n' "$(sha256sum "$target_before" | awk '{print $1}')"
         printf 'target_after_sha256=%s\n' "$(sha256sum "$target_after" | awk '{print $1}')"
         printf 'target_callback_sites=%s\n' "$callbacks"
@@ -128,7 +129,61 @@ run_fixture_mode() {
     printf '%q ' "${replay_cmd[@]}" >> "$mode_raw/replay-command.txt"
     printf '\n' >> "$mode_raw/replay-command.txt"
     ASAN_OPTIONS=detect_leaks=0 "${replay_cmd[@]}" > "$mode_raw/replay.log" 2>&1
-    record_common_metadata "$mode_raw/metadata.txt" "$mode" "$target_before" "$target_after" "$callbacks" "$mode_raw/replay.log"
+    record_common_metadata "$mode_raw/metadata.txt" "$mode" "$target_before" "$target_after" "$callbacks" "$mode_raw/replay.log" clang++
+}
+
+run_c_fixture_mode() {
+    local mode="$1"
+    local input_case="$root_dir/cases/$case_name"
+    local mode_dir="$run_dir/$mode"
+    local source_dir="$mode_dir/source"
+    local mode_raw="$raw_dir/$mode"
+    local target_before="$mode_raw/target.before.c"
+    local target_after="$mode_raw/target.after.c"
+    local object_file="$mode_dir/target.o"
+    local binary="$mode_dir/${case_name}_sfuzzer"
+
+    mkdir -p "$mode_dir" "$mode_raw"
+    cp "$input_case/target.c" "$target_before"
+    if [[ "$mode" == "original" ]]; then
+        mkdir -p "$source_dir"
+        cp -a "$input_case/." "$source_dir/"
+        local instrument_cmd=(python3 "$original_instrumenter" "$source_dir")
+        write_command "$mode_raw/instrument-command.txt" "${instrument_cmd[@]}"
+        "${instrument_cmd[@]}" > "$mode_raw/instrumenter.log" 2>&1
+    else
+        local instrument_cmd=(python3 "$ast_instrumenter"
+            --input-root "$input_case"
+            --output-root "$source_dir"
+            --source-root .
+            --source target.c
+            --manifest "$mode_raw/instrumentation-manifest.json"
+            --clang-arg=-std=gnu11)
+        write_command "$mode_raw/instrument-command.txt" "${instrument_cmd[@]}"
+        "${instrument_cmd[@]}" > "$mode_raw/instrumenter.log" 2>&1
+    fi
+    cp "$source_dir/target.c" "$target_after"
+    diff -u "$target_before" "$target_after" > "$mode_raw/target.diff" || true
+    local callbacks
+    callbacks="$(callback_count "$source_dir/target.c")"
+    printf '%s\n' "$callbacks" > "$mode_raw/target-callback-count.txt"
+
+    local compile_cmd=(clang -std=gnu11 -g -O1 -fno-omit-frame-pointer
+        -fsanitize=address,undefined,fuzzer-no-link -c "$source_dir/target.c"
+        -o "$object_file")
+    write_command "$mode_raw/compile-command.txt" "${compile_cmd[@]}"
+    "${compile_cmd[@]}" > "$mode_raw/compile.log" 2>&1
+    local build_cmd=(clang++ -g -O1 -fno-omit-frame-pointer
+        -fsanitize=address,undefined,fuzzer-no-link "$object_file"
+        "$sgfuzz_dir/libsfuzzer.a" -pthread -o "$binary")
+    write_command "$mode_raw/build-command.txt" "${build_cmd[@]}"
+    "${build_cmd[@]}" > "$mode_raw/build.log" 2>&1
+    local replay_cmd=("$binary" -runs=0 "$source_dir/seeds")
+    printf 'ASAN_OPTIONS=detect_leaks=0 ' > "$mode_raw/replay-command.txt"
+    printf '%q ' "${replay_cmd[@]}" >> "$mode_raw/replay-command.txt"
+    printf '\n' >> "$mode_raw/replay-command.txt"
+    ASAN_OPTIONS=detect_leaks=0 "${replay_cmd[@]}" > "$mode_raw/replay.log" 2>&1
+    record_common_metadata "$mode_raw/metadata.txt" "$mode" "$target_before" "$target_after" "$callbacks" "$mode_raw/replay.log" clang
 }
 
 run_ixwebsocket_mode() {
@@ -181,12 +236,15 @@ run_ixwebsocket_mode() {
     printf '%q ' "${replay_cmd[@]}" >> "$mode_raw/replay-command.txt"
     printf '\n' >> "$mode_raw/replay-command.txt"
     ASAN_OPTIONS=detect_leaks=0 "${replay_cmd[@]}" > "$mode_raw/replay.log" 2>&1
-    record_common_metadata "$mode_raw/metadata.txt" "$mode" "$target_before" "$target_after" "$callbacks" "$mode_raw/replay.log"
+    record_common_metadata "$mode_raw/metadata.txt" "$mode" "$target_before" "$target_after" "$callbacks" "$mode_raw/replay.log" clang++
 }
 
 if [[ "$case_name" == "ixwebsocket-primary" ]]; then
     run_ixwebsocket_mode original
     run_ixwebsocket_mode ast
+elif [[ "$case_name" == c-*-control ]]; then
+    run_c_fixture_mode original
+    run_c_fixture_mode ast
 else
     run_fixture_mode original
     run_fixture_mode ast

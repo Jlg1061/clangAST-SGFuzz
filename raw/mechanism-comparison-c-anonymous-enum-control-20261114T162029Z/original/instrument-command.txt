@@ -1,0 +1,1 @@
+python3 /home/kunaicito/Documents/759/SGFuzz/sanitizer/State_machine_instrument.py /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T162029Z/original/source 

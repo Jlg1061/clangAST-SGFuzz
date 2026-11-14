@@ -25,6 +25,7 @@ fuzzing results. Final experiments will write new, timestamped evidence under
 - `src/` — automatic detector and copy-only instrumenter.
 - `cases/` — small regression cases and the IXWebSocket transport harness.
 - `scripts/` — repeatable checks, deterministic replays, and result derivation.
+- `experiments/` — pre-registered configurations and expected control outcomes.
 - `environment/` — frozen upstream revisions and recorded toolchain details.
 - `raw/` — retained raw output from final-project runs; initially empty.
 - `preliminary/` — curated historical evidence, notes, and derived table.
@@ -79,6 +80,17 @@ bash scripts/run_mechanism_comparison.sh line-direct-unscoped-control
 
 It is useful for a mechanism check, not a randomized fuzzing-performance
 claim: it uses a fixed seed corpus and `-runs=0`.
+
+To run the complete regression-control experiment and derive its table:
+
+```bash
+python3 scripts/run_regression_controls.py
+```
+
+The configuration and expected outcomes are fixed in
+`experiments/regression-controls.json` before execution. A completed reference
+run is indexed by `raw/regression-controls-20261114T164000Z/index.json`; its
+derived table is `derived/regression-controls-20261114T164000Z.md`.
 
 ## Baseline and attribution
 

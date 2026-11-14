@@ -1,0 +1,2 @@
+Completed deterministic mechanism comparison: line-direct-scoped-variant
+Raw evidence: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-line-direct-scoped-variant-20261114T162116Z

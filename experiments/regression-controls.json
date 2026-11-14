@@ -1,0 +1,57 @@
+{
+  "schema": "clangast-sgfuzz-regression-controls-v1",
+  "recorded_before_execution": "2026-11-14",
+  "purpose": "Regression and mechanism controls for the source-selection rule. Each case uses the same source, fixed seed corpus, compiler family, sanitizer flags, SGFuzz runtime, and -runs=0 replay budget for regex and AST modes.",
+  "cases": [
+    {
+      "id": "line-direct-unscoped-control",
+      "origin": "hand-written C++ control",
+      "role": "baseline-preservation control",
+      "reason": "The original regex selector recognizes this direct unscoped enum assignment.",
+      "expected": {
+        "regex": {"callback_sites": 1, "states": 4, "leaves": 1},
+        "ast": {"callback_sites": 1, "states": 4, "leaves": 1}
+      }
+    },
+    {
+      "id": "line-direct-scoped-variant",
+      "origin": "hand-written C++ representation variant",
+      "role": "scoped-enum mechanism control",
+      "reason": "The only relevant representation change from the direct control is enum class syntax.",
+      "expected": {
+        "regex": {"callback_sites": 0, "states": 1, "leaves": 1},
+        "ast": {"callback_sites": 1, "states": 4, "leaves": 1}
+      }
+    },
+    {
+      "id": "line-atomic-unscoped-variant",
+      "origin": "hand-written C++ representation variant",
+      "role": "atomic-enum mechanism control",
+      "reason": "The only relevant representation change from the direct control is std::atomic wrapping.",
+      "expected": {
+        "regex": {"callback_sites": 0, "states": 1, "leaves": 1},
+        "ast": {"callback_sites": 1, "states": 4, "leaves": 1}
+      }
+    },
+    {
+      "id": "c-direct-enum-control",
+      "origin": "hand-written C control",
+      "role": "C-language baseline-preservation control",
+      "reason": "The original regex selector recognizes this direct typedef-enum assignment; four fixed transitions create one four-event path below the root.",
+      "expected": {
+        "regex": {"callback_sites": 1, "states": 5, "leaves": 1},
+        "ast": {"callback_sites": 1, "states": 5, "leaves": 1}
+      }
+    },
+    {
+      "id": "c-anonymous-enum-control",
+      "origin": "hand-written C representation variant",
+      "role": "anonymous-C-enum regression control",
+      "reason": "Two anonymous enum writes use ternary right-hand sides. The regex selector does not match them; AST declaration linkage should identify both and preserve valid GNU C rewriting.",
+      "expected": {
+        "regex": {"callback_sites": 0, "states": 1, "leaves": 1},
+        "ast": {"callback_sites": 2, "states": 3, "leaves": 1}
+      }
+    }
+  ]
+}

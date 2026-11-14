@@ -1,0 +1,26 @@
+--- /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-c-direct-enum-control-20261114T161925Z/original/target.before.c	2026-11-14 16:19:25.004418982 +0000
++++ /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-c-direct-enum-control-20261114T161925Z/original/target.after.c	2026-11-14 16:19:25.028419650 +0000
+@@ -1,3 +1,14 @@
++#ifndef SFUZZ_INSTRUMENT
++#define SFUZZ_INSTRUMENT
++#ifdef __cplusplus
++extern "C" {
++#endif
++void __sfuzzer_instrument(unsigned int location, unsigned int state_value);
++__attribute__((weak)) void __sfuzzer_instrument(unsigned int location, unsigned int state_value){location=0;state_value=0;};
++#ifdef __cplusplus
++}
++#endif /* __cplusplus */
++#endif /* SFUZZ_INSTRUMENT */
+ #include <stddef.h>
+ #include <stdint.h>
+ 
+@@ -13,7 +24,7 @@
+ 
+ static void set_state(ConnectionState next_state)
+ {
+-    current_state = next_state;
++{__sfuzzer_instrument(1, next_state);    current_state = next_state;}
+ }
+ 
+ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size)

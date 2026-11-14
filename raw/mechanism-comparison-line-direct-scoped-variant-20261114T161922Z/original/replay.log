@@ -1,0 +1,9 @@
+INFO: Seed: 3108702220
+INFO: Loaded 1 modules   (8 inline 8-bit counters): 8 [0x55698b94df53, 0x55698b94df5b), 
+INFO: Loaded 1 PC tables (8 PCs): 8 [0x55698b94df60,0x55698b94dfe0), 
+INFO:        1 files found in /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-line-direct-scoped-variant-20261114T161922Z/original/source/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 4b max: 4b total: 4b rss: 33Mb
+#2	INITED cov: 5 ft: 6 corp: 1/4b exec/s: 0 rss: 33Mb states: 1 leaves: 1
+#2	DONE   cov: 5 ft: 6 corp: 1/4b lim: 4 exec/s: 0 rss: 33Mb states: 1 leaves: 1
+Done 2 runs in 0 second(s)

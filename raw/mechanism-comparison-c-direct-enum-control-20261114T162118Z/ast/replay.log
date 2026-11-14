@@ -1,0 +1,9 @@
+INFO: Seed: 3583984963
+INFO: Loaded 1 modules   (14 inline 8-bit counters): 14 [0x55e924568f43, 0x55e924568f51), 
+INFO: Loaded 1 PC tables (14 PCs): 14 [0x55e924568f58,0x55e924569038), 
+INFO:        1 files found in /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162118Z/ast/source/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 5b max: 5b total: 5b rss: 31Mb
+#3	INITED cov: 10 ft: 11 corp: 1/5b exec/s: 0 rss: 31Mb states: 5 leaves: 1
+#3	DONE   cov: 10 ft: 11 corp: 1/5b lim: 5 exec/s: 0 rss: 31Mb states: 5 leaves: 1
+Done 3 runs in 0 second(s)

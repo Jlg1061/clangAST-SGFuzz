@@ -1,0 +1,251 @@
+{
+  "callback_sites": 2,
+  "discovery": {
+    "candidate_transition_writes": [
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 13,
+          "offset": 300
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 13,
+          "begin_offset": 300,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 349,
+          "end_offset_exclusive": 350,
+          "end_token_length": null,
+          "file": "source/target.c"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "anonymous enum at source/target.c:10:5",
+        "storage_decl_id": "0x280a79a8",
+        "storage_kind": "direct",
+        "storage_name": "local_state"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 14,
+          "offset": 356
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 14,
+          "begin_offset": 356,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 423,
+          "end_offset_exclusive": 424,
+          "end_token_length": null,
+          "file": "source/target.c"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "anonymous enum at source/target.c:5:5",
+        "storage_decl_id": "0x280a7528",
+        "storage_kind": "direct",
+        "storage_name": "field_state"
+      }
+    ],
+    "clang": {
+      "arguments": [
+        "-std=gnu11"
+      ],
+      "ast_filter": null,
+      "executable": "auto",
+      "jobs": 1,
+      "version": "clang: Debian clang version 14.0.6; clang++: Debian clang version 14.0.6"
+    },
+    "enum_declarations": [
+      {
+        "declaration_kind": "anonymous EnumDecl",
+        "location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 5,
+          "offset": 64
+        },
+        "name": "anonymous enum at source/target.c:5:5"
+      },
+      {
+        "declaration_kind": "anonymous EnumDecl",
+        "location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 10,
+          "offset": 199
+        },
+        "name": "anonymous enum at source/target.c:10:5"
+      }
+    ],
+    "mode": "dry-run",
+    "parse_failures": [],
+    "schema": "sgfuzz-clang-ast-dry-run-v3",
+    "selection_mode": "automatic",
+    "source_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T162119Z/ast/source",
+    "state_storage": [
+      {
+        "canonical_type": "enum transport::(unnamed at source/target.c:5:5)",
+        "decl_id": "0x280a7528",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 4,
+          "offset": 45
+        },
+        "name": "field_state",
+        "spelled_type": "enum (unnamed enum at source/target.c:5:5)",
+        "state_type": "anonymous enum at source/target.c:5:5",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "enum (unnamed at source/target.c:10:5)",
+        "decl_id": "0x280a79a8",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 10,
+          "offset": 199
+        },
+        "name": "local_state",
+        "spelled_type": "enum (unnamed enum at source/target.c:10:5)",
+        "state_type": "anonymous enum at source/target.c:10:5",
+        "storage_kind": "direct"
+      }
+    ],
+    "state_type": null,
+    "summary": {
+      "candidate_transition_writes": 2,
+      "enum_declarations": 2,
+      "parse_failures": 0,
+      "state_storage_declarations": 2,
+      "state_types_detected": 2,
+      "translation_units_parsed": 1,
+      "translation_units_requested": 1
+    },
+    "target_source_modified": false,
+    "translation_units": [
+      {
+        "analysis_command": [
+          "clang",
+          "-std=gnu11",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "source/target.c"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 0.033033,
+        "source": "source/target.c",
+        "status": "ok"
+      }
+    ]
+  },
+  "input_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/cases/c-anonymous-enum-control",
+  "input_source_modified": false,
+  "input_source_sha256_after": {
+    "target.c": "2914e37c642c4a00df312b0cc7f02495ac3e23042aeb50406373fb0f3e8fa867"
+  },
+  "input_source_sha256_before": {
+    "target.c": "2914e37c642c4a00df312b0cc7f02495ac3e23042aeb50406373fb0f3e8fa867"
+  },
+  "instrumented_files": [
+    {
+      "callback_sites": [
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 5,
+              "file": "source/target.c",
+              "line": 13,
+              "offset": 300
+            },
+            "assignment_range": {
+              "begin_column": 5,
+              "begin_line": 13,
+              "begin_offset": 300,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 349,
+              "end_offset_exclusive": 350,
+              "end_token_length": null,
+              "file": "source/target.c"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "anonymous enum at source/target.c:10:5",
+            "storage_decl_id": "0x280a79a8",
+            "storage_kind": "direct",
+            "storage_name": "local_state"
+          },
+          "capture_variable": "sfuzzer_ast_capture_1_0",
+          "left_hand_side": "local_state",
+          "location_id": 1,
+          "original_right_hand_side": "local_open ? LOCAL_OPEN : LOCAL_IDLE"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 5,
+              "file": "source/target.c",
+              "line": 14,
+              "offset": 356
+            },
+            "assignment_range": {
+              "begin_column": 5,
+              "begin_line": 14,
+              "begin_offset": 356,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 423,
+              "end_offset_exclusive": 424,
+              "end_token_length": null,
+              "file": "source/target.c"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "anonymous enum at source/target.c:5:5",
+            "storage_decl_id": "0x280a7528",
+            "storage_kind": "direct",
+            "storage_name": "field_state"
+          },
+          "capture_variable": "sfuzzer_ast_capture_2_0",
+          "left_hand_side": "transport.field_state",
+          "location_id": 2,
+          "original_right_hand_side": "field_open ? TRANSPORT_OPEN : TRANSPORT_IDLE"
+        }
+      ],
+      "sha256_after": "a7238381d471b263e908fbf2074091b444188ae2759ad7308cf3c0194631019a",
+      "sha256_before": "2914e37c642c4a00df312b0cc7f02495ac3e23042aeb50406373fb0f3e8fa867",
+      "skipped_candidates": [],
+      "source": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T162119Z/ast/source/target.c"
+    }
+  ],
+  "mode": "copy-and-instrument",
+  "output_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T162119Z/ast/source",
+  "schema": "sgfuzz-clang-ast-instrument-v3",
+  "selection_mode": "automatic",
+  "skipped_candidates": 0,
+  "state_type": null
+}

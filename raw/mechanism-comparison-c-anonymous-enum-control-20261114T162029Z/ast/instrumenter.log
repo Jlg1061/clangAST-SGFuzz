@@ -1,0 +1,2 @@
+instrumented 2 callback site(s) in copied source: /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T162029Z/ast/source
+manifest: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-c-anonymous-enum-control-20261114T162029Z/ast/instrumentation-manifest.json

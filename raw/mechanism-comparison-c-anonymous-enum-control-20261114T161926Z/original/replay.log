@@ -1,0 +1,35 @@
+INFO: Seed: 2734521125
+INFO: Loaded 1 modules   (13 inline 8-bit counters): 13 [0x560a3abd4f23, 0x560a3abd4f30), 
+INFO: Loaded 1 PC tables (13 PCs): 13 [0x560a3abd4f30,0x560a3abd5000), 
+INFO:        1 files found in /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T161926Z/original/source/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 1 min: 3b max: 3b total: 3b rss: 31Mb
+c-anonymous-enum-control_sfuzzer: /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:618: void fuzzer::Fuzzer::ExecuteCallback(const uint8_t *, size_t): Assertion `Res == 0' failed.
+==316== ERROR: libFuzzer: deadly signal
+    #0 0x560a3ab24991 in __sanitizer_print_stack_trace (/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T161926Z/original/c-anonymous-enum-control_sfuzzer+0xb4991) (BuildId: ce5135f62c4278e40f2284a98e72807eecfaead5)
+    #1 0x560a3ab88af5 in fuzzer::PrintStackTrace() /home/kunaicito/Documents/759/SGFuzz/FuzzerUtil.cpp:210:5
+    #2 0x560a3ab6c249 in fuzzer::Fuzzer::CrashCallback() /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:233:3
+    #3 0x7f77dde5a04f  (/lib/x86_64-linux-gnu/libc.so.6+0x3c04f) (BuildId: 6196744a316dbd57c0fd8968df1680aac482cec4)
+    #4 0x7f77ddea8eeb in __pthread_kill_implementation nptl/./nptl/pthread_kill.c:43:17
+    #5 0x7f77dde59fb1 in raise signal/../sysdeps/posix/raise.c:26:13
+    #6 0x7f77dde44471 in abort stdlib/./stdlib/abort.c:79:7
+    #7 0x7f77dde44394 in __assert_fail_base assert/./assert/assert.c:94:3
+    #8 0x7f77dde52ec1 in __assert_fail assert/./assert/assert.c:103:3
+    #9 0x560a3ab6da10 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:618:5
+    #10 0x560a3ab6cdff in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:518:3
+    #11 0x560a3ab6e777 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, fuzzer::fuzzer_allocator<fuzzer::SizedFile> >&) /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:867:7
+    #12 0x560a3ab6eb1a in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, fuzzer::fuzzer_allocator<fuzzer::SizedFile> >&) /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:898:3
+    #13 0x560a3ab5d640 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) /home/kunaicito/Documents/759/SGFuzz/FuzzerDriver.cpp:906:6
+    #14 0x560a3ab57eb2 in main /home/kunaicito/Documents/759/SGFuzz/FuzzerMain.cpp:20:10
+    #15 0x7f77dde45249 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #16 0x7f77dde45304 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #17 0x560a3aa97a60 in _start (/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-anonymous-enum-control-20261114T161926Z/original/c-anonymous-enum-control_sfuzzer+0x27a60) (BuildId: ce5135f62c4278e40f2284a98e72807eecfaead5)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x31,0x31,0xa,
+11\x0a
+artifact_prefix='./'; Test unit written to ./crash-dd71038f3463f511ee7403dbcbc87195302d891c
+Base64: MTEK

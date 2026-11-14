@@ -1,0 +1,2 @@
+Completed deterministic mechanism comparison: c-anonymous-enum-control
+Raw evidence: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-c-anonymous-enum-control-20261114T162119Z

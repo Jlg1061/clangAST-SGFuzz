@@ -1,0 +1,1 @@
+bash /home/kunaicito/Documents/759/clangAST-SGFuzz/scripts/run_mechanism_comparison.sh line-atomic-unscoped-variant

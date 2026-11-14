@@ -1,0 +1,174 @@
+{
+  "callback_sites": 1,
+  "discovery": {
+    "candidate_transition_writes": [
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "source/target.c",
+          "line": 16,
+          "offset": 230
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 16,
+          "begin_offset": 230,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 255,
+          "end_offset_exclusive": 256,
+          "end_token_length": null,
+          "file": "source/target.c"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ConnectionState",
+        "storage_decl_id": "0x32fa82d0",
+        "storage_kind": "direct",
+        "storage_name": "current_state"
+      }
+    ],
+    "clang": {
+      "arguments": [
+        "-std=gnu11"
+      ],
+      "ast_filter": null,
+      "executable": "auto",
+      "jobs": 1,
+      "version": "clang: Debian clang version 14.0.6; clang++: Debian clang version 14.0.6"
+    },
+    "enum_declarations": [
+      {
+        "declaration_kind": "anonymous EnumDecl",
+        "location": {
+          "column": 9,
+          "file": "source/target.c",
+          "line": 4,
+          "offset": 49
+        },
+        "name": "anonymous enum at source/target.c:4:9"
+      },
+      {
+        "declaration_kind": "TypedefDecl",
+        "location": {
+          "column": 1,
+          "file": "source/target.c",
+          "line": 4,
+          "offset": 41
+        },
+        "name": "ConnectionState"
+      }
+    ],
+    "mode": "dry-run",
+    "parse_failures": [],
+    "schema": "sgfuzz-clang-ast-dry-run-v3",
+    "selection_mode": "automatic",
+    "source_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162118Z/ast/source",
+    "state_storage": [
+      {
+        "canonical_type": "ConnectionState",
+        "decl_id": "0x32fa82d0",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 1,
+          "file": "source/target.c",
+          "line": 12,
+          "offset": 126
+        },
+        "name": "current_state",
+        "spelled_type": "ConnectionState",
+        "state_type": "ConnectionState",
+        "storage_kind": "direct"
+      }
+    ],
+    "state_type": null,
+    "summary": {
+      "candidate_transition_writes": 1,
+      "enum_declarations": 2,
+      "parse_failures": 0,
+      "state_storage_declarations": 1,
+      "state_types_detected": 1,
+      "translation_units_parsed": 1,
+      "translation_units_requested": 1
+    },
+    "target_source_modified": false,
+    "translation_units": [
+      {
+        "analysis_command": [
+          "clang",
+          "-std=gnu11",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "source/target.c"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 0.032,
+        "source": "source/target.c",
+        "status": "ok"
+      }
+    ]
+  },
+  "input_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/cases/c-direct-enum-control",
+  "input_source_modified": false,
+  "input_source_sha256_after": {
+    "target.c": "3850160eb7a1b48149b1e42460030f6df691a7c68b884206badc542d8cd85de8"
+  },
+  "input_source_sha256_before": {
+    "target.c": "3850160eb7a1b48149b1e42460030f6df691a7c68b884206badc542d8cd85de8"
+  },
+  "instrumented_files": [
+    {
+      "callback_sites": [
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 5,
+              "file": "source/target.c",
+              "line": 16,
+              "offset": 230
+            },
+            "assignment_range": {
+              "begin_column": 5,
+              "begin_line": 16,
+              "begin_offset": 230,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 255,
+              "end_offset_exclusive": 256,
+              "end_token_length": null,
+              "file": "source/target.c"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ConnectionState",
+            "storage_decl_id": "0x32fa82d0",
+            "storage_kind": "direct",
+            "storage_name": "current_state"
+          },
+          "capture_variable": "sfuzzer_ast_capture_1_0",
+          "left_hand_side": "current_state",
+          "location_id": 1,
+          "original_right_hand_side": "next_state"
+        }
+      ],
+      "sha256_after": "4e1fab49ba7b478e1aaeeb3488169006ebdf11ff62534cdecd9d34368b205e7d",
+      "sha256_before": "3850160eb7a1b48149b1e42460030f6df691a7c68b884206badc542d8cd85de8",
+      "skipped_candidates": [],
+      "source": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162118Z/ast/source/target.c"
+    }
+  ],
+  "mode": "copy-and-instrument",
+  "output_root": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-c-direct-enum-control-20261114T162118Z/ast/source",
+  "schema": "sgfuzz-clang-ast-instrument-v3",
+  "selection_mode": "automatic",
+  "skipped_candidates": 0,
+  "state_type": null
+}

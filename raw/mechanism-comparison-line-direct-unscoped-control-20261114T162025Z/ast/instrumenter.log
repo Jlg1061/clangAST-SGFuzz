@@ -1,0 +1,2 @@
+instrumented 1 callback site(s) in copied source: /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/mechanism-comparison-line-direct-unscoped-control-20261114T162025Z/ast/source
+manifest: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/mechanism-comparison-line-direct-unscoped-control-20261114T162025Z/ast/instrumentation-manifest.json
