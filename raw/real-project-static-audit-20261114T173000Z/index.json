@@ -1,0 +1,67 @@
+{
+  "elapsed_wall_seconds": 534.548098,
+  "jobs": 8,
+  "label": "20261114T173000Z",
+  "plan": "experiments/real-project-static-audit.json",
+  "schema": "clangast-sgfuzz-real-project-static-audit-index-v1",
+  "target_source_modified": false,
+  "targets": [
+    {
+      "ast_audit_returncode": 0,
+      "checkout": "/home/kunaicito/Documents/759/IXWebSocket",
+      "expected_commit": "514a0b968503d758a2954ff9016289f41f489616",
+      "id": "ixwebsocket-default-library",
+      "language": "C++",
+      "manifest": "raw/real-project-static-audit-20261114T173000Z/ixwebsocket-default-library/ast-manifest.json",
+      "observed_commit": "514a0b968503d758a2954ff9016289f41f489616",
+      "project": "IXWebSocket",
+      "scope": "The 36 translation units in the pinned default ixwebsocket CMake library target.",
+      "source_list": "raw/real-project-static-audit-20261114T173000Z/ixwebsocket-default-library/source-list.txt",
+      "source_list_sha256": "41c6736a8a5fe0831ad6eb7570350b120915f7b5e7ac69b580bd7e69550ff56a",
+      "source_root": "/home/kunaicito/Documents/759/IXWebSocket/ixwebsocket",
+      "status": "ok",
+      "summary": {
+        "candidate_transition_writes": 17,
+        "enum_declarations": 18,
+        "parse_failures": 0,
+        "state_storage_declarations": 17,
+        "state_types_detected": 9,
+        "translation_units_parsed": 36,
+        "translation_units_requested": 36
+      },
+      "translation_units_frozen": 36,
+      "working_tree_clean": true,
+      "working_tree_status_short": []
+    },
+    {
+      "ast_audit_returncode": 0,
+      "checkout": "/home/kunaicito/Documents/759/h2o",
+      "cmake_build_directory": "/home/kunaicito/Documents/759/clangAST-SGFuzz/runs/real-project-static-audit-20261114T173000Z/h2o-h2o-fuzzer-http2-cmake-build",
+      "cmake_returncode": 0,
+      "compile_commands": "raw/real-project-static-audit-20261114T173000Z/h2o-h2o-fuzzer-http2/compile_commands.json",
+      "expected_commit": "1e7344932fcab8767e5c1297d08d3b06db4fc5a6",
+      "id": "h2o-h2o-fuzzer-http2",
+      "language": "C",
+      "manifest": "raw/real-project-static-audit-20261114T173000Z/h2o-h2o-fuzzer-http2/ast-manifest.json",
+      "observed_commit": "1e7344932fcab8767e5c1297d08d3b06db4fc5a6",
+      "project": "H2O",
+      "scope": "The 124 C translation units in the frozen h2o_h2o-fuzzer-http2 source closure used for the paper-aligned H2O target.",
+      "source_list": "raw/real-project-static-audit-20261114T173000Z/h2o-h2o-fuzzer-http2/source-list.txt",
+      "source_list_sha256": "033ea86f283b5255bac8006d6ac9486132f534df3528b556b39368fd93663966",
+      "source_root": "/home/kunaicito/Documents/759/h2o",
+      "status": "ok",
+      "summary": {
+        "candidate_transition_writes": 171,
+        "enum_declarations": 98,
+        "parse_failures": 0,
+        "state_storage_declarations": 73,
+        "state_types_detected": 38,
+        "translation_units_parsed": 124,
+        "translation_units_requested": 124
+      },
+      "translation_units_frozen": 124,
+      "working_tree_clean": true,
+      "working_tree_status_short": []
+    }
+  ]
+}

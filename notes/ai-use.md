@@ -28,3 +28,16 @@ of the raw compiler/replay logs, and the successful complete control run at
 `derived/regression-controls-20261114T164000Z.md`. The two retained setup
 failures and the derivation-parser failure are documented in `raw/README.md`;
 they were not omitted or treated as successful measurements.
+
+## Final-project real-project static audit
+
+Codex helped add compilation-database handling, freeze the IXWebSocket and H2O
+translation-unit lists, and implement the static-audit runner and derivation.
+The authors verified the change with `python3 -m py_compile`, the nine-check
+AST integration suite, a CMake-backed H2O single-unit check, and the completed
+fresh audit at `raw/real-project-static-audit-20261114T173000Z/index.json`.
+The first retained attempt exposed a stderr-pipe capture stall; the diagnosis,
+safe target-external fix, and superseded raw directory are documented in
+`raw/real-project-static-audit-20261114T170000Z/RUN_STOPPED.md`. The static
+counts are explicitly interpreted only as candidate-discovery and parse-
+coverage evidence, not as fuzzing effectiveness or semantic ground truth.

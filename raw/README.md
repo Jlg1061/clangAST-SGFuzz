@@ -18,3 +18,15 @@ The other `regression-controls-*` directories are retained setup evidence:
 
 These failures are implementation/setup diagnostics, not evidence about the
 relative fuzzing effectiveness of regex and AST instrumentation.
+
+The completed real-project static audit is
+`real-project-static-audit-20261114T173000Z/`. Its `index.json` pins both
+target commits, lists and hashes the frozen translation-unit scopes, and
+connects the raw manifests to
+`../derived/real-project-static-audit-20261114T173000Z.md`. The H2O raw folder
+also retains the fresh out-of-tree CMake configuration and the exact
+`compile_commands.json` used for every selected translation unit.
+
+`real-project-static-audit-20261114T170000Z/` is the intentionally retained
+superseded attempt. `RUN_STOPPED.md` records the diagnosis of the analyzer's
+stderr-pipe capture stall. It is setup evidence only, not a result.

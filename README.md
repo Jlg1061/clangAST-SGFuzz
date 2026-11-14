@@ -92,6 +92,29 @@ The configuration and expected outcomes are fixed in
 run is indexed by `raw/regression-controls-20261114T164000Z/index.json`; its
 derived table is `derived/regression-controls-20261114T164000Z.md`.
 
+## Real-project static audit
+
+The real-project audit freezes two distinct scopes: the 36 C++ translation
+units in IXWebSocket's default library and the 124 C translation units in the
+paper-aligned `h2o_h2o-fuzzer-http2` closure. It does not instrument, build,
+or fuzz either target. Instead it runs automatic AST discovery with a pinned
+source list and records the enum declarations, enum storage, candidate writes,
+and parse coverage. H2O is configured out of tree and each selected source is
+parsed with its own fresh CMake compilation-database entry.
+
+```bash
+python3 scripts/run_real_project_static_audit.py --label $(date -u +%Y%m%dT%H%M%SZ)
+```
+
+With eight workers, expect roughly 10 minutes on the recorded 12-core machine.
+Expected completed reference result: 36/36 IXWebSocket and 124/124 H2O units
+parse successfully; the derived table is
+`derived/real-project-static-audit-20261114T173000Z.md`. The raw index points
+to the exact source lists, target commits, CMake configuration, compiler
+commands, and manifests. These counts are a static candidate inventory, not a
+claim about semantic state-variable precision, instrumentation buildability,
+fuzzing speed, STT coverage, or bugs.
+
 ## Baseline and attribution
 
 The baseline source instrumenter remains the upstream SGFuzz script at the

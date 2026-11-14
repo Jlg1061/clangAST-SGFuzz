@@ -1,0 +1,44 @@
+{
+  "schema": "clangast-sgfuzz-real-project-static-audit-v1",
+  "recorded_before_execution": "2026-11-14",
+  "purpose": "Fresh read-only automatic AST audit of two pinned real-project scopes. The primary measures are parse coverage, project-local enum and enum-storage declarations, candidate writes, and statement-safe candidate writes. These are static discovery counts, not fuzzing throughput, bugs, or semantic ground truth.",
+  "execution": {
+    "jobs": 8,
+    "target_source_modified": false,
+    "h2o_cmake_arguments": [
+      "-DCMAKE_C_COMPILER=clang",
+      "-DCMAKE_CXX_COMPILER=clang++",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "-DBUILD_SHARED_LIBS=OFF"
+    ]
+  },
+  "targets": [
+    {
+      "id": "ixwebsocket-default-library",
+      "project": "IXWebSocket",
+      "checkout": "../IXWebSocket",
+      "expected_commit": "514a0b968503d758a2954ff9016289f41f489616",
+      "language": "C++",
+      "scope": "The 36 translation units in the pinned default ixwebsocket CMake library target.",
+      "source_root": "ixwebsocket",
+      "translation_units": "experiments/ixwebsocket-default-library-sources.txt",
+      "fallback_clang_arguments": [
+        "-std=c++11",
+        "-I{checkout}",
+        "-DIXWEBSOCKET_USE_ZLIB"
+      ]
+    },
+    {
+      "id": "h2o-h2o-fuzzer-http2",
+      "project": "H2O",
+      "checkout": "../h2o",
+      "expected_commit": "1e7344932fcab8767e5c1297d08d3b06db4fc5a6",
+      "language": "C",
+      "scope": "The 124 C translation units in the frozen h2o_h2o-fuzzer-http2 source closure used for the paper-aligned H2O target.",
+      "source_root": ".",
+      "translation_units": "experiments/h2o-h2o-fuzzer-http2-sources.txt",
+      "source_list_sha256": "033ea86f283b5255bac8006d6ac9486132f534df3528b556b39368fd93663966",
+      "compilation_database": "fresh-cmake"
+    }
+  ]
+}

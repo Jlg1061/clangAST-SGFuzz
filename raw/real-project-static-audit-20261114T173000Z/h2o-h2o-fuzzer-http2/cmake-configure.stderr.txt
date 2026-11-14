@@ -1,0 +1,42 @@
+CMake Deprecation Warning at CMakeLists.txt:22 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning at CMakeLists.txt:196 (FIND_PACKAGE):
+  By not providing "FindLIBUV.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "LIBUV", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "LIBUV" with any of
+  the following names:
+
+    LIBUVConfig.cmake
+    libuv-config.cmake
+
+  Add the installation prefix of "LIBUV" to CMAKE_PREFIX_PATH or set
+  "LIBUV_DIR" to a directory containing one of the above files.  If "LIBUV"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+CMake Warning at CMakeLists.txt:221 (FIND_PACKAGE):
+  By not providing "FindWSLAY.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "WSLAY", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "WSLAY" with any of
+  the following names:
+
+    WSLAYConfig.cmake
+    wslay-config.cmake
+
+  Add the installation prefix of "WSLAY" to CMAKE_PREFIX_PATH or set
+  "WSLAY_DIR" to a directory containing one of the above files.  If "WSLAY"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+

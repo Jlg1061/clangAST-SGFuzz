@@ -1,0 +1,2 @@
+dry-run complete: 17 state-storage declaration(s), 17 candidate transition write(s), 0 parse failure(s)
+manifest: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/real-project-static-audit-20261114T173000Z/ixwebsocket-default-library/ast-manifest.json

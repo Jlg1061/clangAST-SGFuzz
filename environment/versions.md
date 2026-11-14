@@ -25,20 +25,18 @@ is used against a clean checkout of the frozen SGFuzz revision above.
 | Memory available to the run | 5.7 GiB RAM; 975 MiB swap |
 | Python | 3.11.2 |
 | Clang | Debian Clang 14.0.6 |
-| Parse language mode | C++14 for IXWebSocket; GNU C11 for C cases and H2O |
+| Parse language mode | C++11 with IXWebSocket's recorded default-library flags; GNU C11 for C fixtures; C18 with the fresh H2O CMake compilation database |
 | SGFuzz runtime archive | `libsfuzzer.a`, SHA-256 `783e83c4102e0490f4ee828c40041f01a2018f9f6d9ead14b6c963dd4ab50559` |
 
 Automatic discovery chooses `clang++` for C++ and `clang` for C by default, with
 `-Xclang -ast-dump` and `-fsyntax-only`, streaming the textual AST so that
 parent/child relations can identify the assignment left-hand side. Focused
 debug mode retains a JSON-AST path. Neither discovery mode links or executes
-the target. The IXWebSocket pilot uses the same C++14 mode, compiler, target
-commit, and SGFuzz runtime for baseline and prototype. The full-target
-IXWebSocket check uses its default CMake target with TLS disabled and Zlib
-enabled (36 C++ translation units). The H2O check uses the 124 C source files
-listed by the `h2o-fuzzer-http2` CMake dependency closure, with
-OSS-Fuzz-related options and MRuby disabled; its exact configure and build
-commands are retained in `preliminary/raw/`; final-project commands and runs
-will be retained in `raw/`. The C regression uses
+the target. The full-target IXWebSocket static audit uses its recorded default
+library flags with Zlib enabled (36 C++ translation units). The H2O static
+audit uses the 124 C source files listed by the `h2o-fuzzer-http2` CMake
+dependency closure and a fresh out-of-tree CMake `compile_commands.json`;
+each unit keeps its own recorded preprocessing arguments. The final commands
+and raw manifests are retained under `raw/`. The C regression uses
 Clang in GNU C11 mode because copy-and-instrument emits `__auto_type` to
 preserve an assignment right-hand side's type while evaluating it once.
