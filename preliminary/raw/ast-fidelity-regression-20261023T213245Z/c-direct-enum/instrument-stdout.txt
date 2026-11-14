@@ -1,0 +1,2 @@
+instrumented 1 callback site(s) in copied source: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/ast-fidelity-regression-20261023T213245Z/c-direct-enum/instrumented-copy
+manifest: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/ast-fidelity-regression-20261023T213245Z/c-direct-enum/instrumentation-manifest.json

@@ -1,0 +1,7 @@
+/tmp/ixwebsocket-full-target-regex-20261023T210623Z/ixwebsocket/IXUrlParser.cpp:7:62: warning: parameter 'location' set but not used [-Wunused-but-set-parameter]
+__attribute__((weak)) void __sfuzzer_instrument(unsigned int location, unsigned int state_value){location=0;state_value=0;};
+                                                             ^
+/tmp/ixwebsocket-full-target-regex-20261023T210623Z/ixwebsocket/IXUrlParser.cpp:7:85: warning: parameter 'state_value' set but not used [-Wunused-but-set-parameter]
+__attribute__((weak)) void __sfuzzer_instrument(unsigned int location, unsigned int state_value){location=0;state_value=0;};
+                                                                                    ^
+2 warnings generated.

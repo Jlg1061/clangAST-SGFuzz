@@ -1,0 +1,4 @@
+[100%] Built target libh2o-evloop
+[100%] Building CXX object CMakeFiles/h2o-fuzzer-http2.dir/fuzz/driver.cc.o
+[100%] Linking CXX executable h2o-fuzzer-http2
+[100%] Built target h2o-fuzzer-http2

@@ -1,0 +1,5 @@
+case=line-atomic-unscoped-variant
+measurement=wall-clock milliseconds for source-copy-and-instrument stage
+source_sha256=4d3e7e4d8e452474238528110792a92880a9cfcf8aafc21c8c7d32446f517b15
+compiler=Debian clang version 14.0.6
+sgfuzz_commit=35f1ffc9482d524b03e54c7a48f4a742ba9fc9a3

@@ -1,0 +1,15 @@
+# Python bytecode and local test state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Reproducible but disposable copies and build products
+runs/
+build/
+cmake-build-*/
+work/
+
+# Local upstream checkouts, if placed inside this repository accidentally
+SGFuzz/
+IXWebSocket/
+h2o/

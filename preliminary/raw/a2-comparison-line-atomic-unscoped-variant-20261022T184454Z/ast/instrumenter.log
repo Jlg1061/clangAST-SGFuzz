@@ -1,0 +1,2 @@
+instrumented 1 callback site(s) in copied source: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/runs/a2-comparison-line-atomic-unscoped-variant-20261022T184454Z/ast/source
+manifest: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/a2-comparison-line-atomic-unscoped-variant-20261022T184454Z/ast/instrumentation-manifest.json

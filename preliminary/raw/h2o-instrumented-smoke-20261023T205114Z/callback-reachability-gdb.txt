@@ -1,0 +1,16 @@
+Breakpoint 1 at 0x2e31fe: __sfuzzer_instrument. (25 locations)
+>Undefined command: "silent".  Try "help".
+The program is not being run.
+This command cannot be used at the top level.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+INFO: Seed: 1058959488
+INFO: Loaded 1 modules   (20511 inline 8-bit counters): 20511 [0x555556038914, 0x55555603d933), 
+INFO: Loaded 1 PC tables (20511 PCs): 20511 [0x55555603d938,0x55555608db28), 
+/tmp/h2o-sgfuzz-ast-build-final-20261023T205114Z/h2o-fuzzer-http2: Running 1 inputs 1 time(s) each.
+Running: /tmp/h2o-sgfuzz-ast-instrumented-20261023T205114Z/fuzz/http2-corpus/011262c1c9966afaee07d3b0b5e89e42dc30b410
+[New Thread 0x7ffff3cf96c0 (LWP 661115)]
+
+Thread 1 "h2o-fuzzer-http" hit Breakpoint 1.1, __sfuzzer_instrument (state_name=99, state_value=0) at /home/kunaicito/Documents/759/SGFuzz/FuzzerStateMachine.cpp:79
+79	    if (SM_cur_node == nullptr) {
+SGFUZZ_CALLBACK_HITS=1\n

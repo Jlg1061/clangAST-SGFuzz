@@ -1,0 +1,575 @@
+/home/kunaicito/Documents/759/h2o/deps/libgkc/gkc.c:338:12: warning: variable 'gi' set but not used [-Wunused-but-set-variable]
+    double gi = 0;
+           ^
+1 warning generated.
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:104:16: warning: 'EC_KEY_new' is deprecated [-Wdeprecated-declarations]
+    if ((key = EC_KEY_new()) == NULL)
+               ^
+/usr/include/openssl/ec.h:960:1: note: 'EC_KEY_new' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new(void);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:106:10: warning: 'EC_KEY_set_group' is deprecated [-Wdeprecated-declarations]
+    if (!EC_KEY_set_group(key, group) || !EC_KEY_generate_key(key)) {
+         ^
+/usr/include/openssl/ec.h:1034:1: note: 'EC_KEY_set_group' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_group(EC_KEY *key, const EC_GROUP *group);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:106:43: warning: 'EC_KEY_generate_key' is deprecated [-Wdeprecated-declarations]
+    if (!EC_KEY_set_group(key, group) || !EC_KEY_generate_key(key)) {
+                                          ^
+/usr/include/openssl/ec.h:1093:1: note: 'EC_KEY_generate_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int EC_KEY_generate_key(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:107:9: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+        EC_KEY_free(key);
+        ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:124:9: warning: 'ECDH_compute_key' is deprecated [-Wdeprecated-declarations]
+    if (ECDH_compute_key(secret.base, secret.len, peer_point, privkey, NULL) <= 0) {
+        ^
+/usr/include/openssl/ec.h:1288:1: note: 'ECDH_compute_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int ECDH_compute_key(void *out, size_t outlen,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:180:9: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+        EC_KEY_free(ctx->privkey);
+        ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:189:29: warning: 'EC_KEY_get0_group' is deprecated [-Wdeprecated-declarations]
+    const EC_GROUP *group = EC_KEY_get0_group(ctx->privkey);
+                            ^
+/usr/include/openssl/ec.h:1026:1: note: 'EC_KEY_get0_group' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:241:29: warning: 'EC_KEY_get0_group' is deprecated [-Wdeprecated-declarations]
+    const EC_GROUP *group = EC_KEY_get0_group(ctx->privkey);
+                            ^
+/usr/include/openssl/ec.h:1026:1: note: 'EC_KEY_get0_group' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:242:30: warning: 'EC_KEY_get0_public_key' is deprecated [-Wdeprecated-declarations]
+    const EC_POINT *pubkey = EC_KEY_get0_public_key(ctx->privkey);
+                             ^
+/usr/include/openssl/ec.h:1054:1: note: 'EC_KEY_get0_public_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_POINT *EC_KEY_get0_public_key(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:328:46: warning: 'EC_KEY_get0_public_key' is deprecated [-Wdeprecated-declarations]
+    if ((*pubkey = x9_62_encode_point(group, EC_KEY_get0_public_key(privkey), bn_ctx)).base == NULL) {
+                                             ^
+/usr/include/openssl/ec.h:1054:1: note: 'EC_KEY_get0_public_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_POINT *EC_KEY_get0_public_key(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:341:9: warning: 'ECDH_compute_key' is deprecated [-Wdeprecated-declarations]
+    if (ECDH_compute_key(secret->base, secret->len, peer_point, privkey, NULL) <= 0) {
+        ^
+/usr/include/openssl/ec.h:1288:1: note: 'ECDH_compute_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int ECDH_compute_key(void *out, size_t outlen,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:352:9: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+        EC_KEY_free(privkey);
+        ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:571:25: warning: 'EVP_PKEY_get1_EC_KEY' is deprecated [-Wdeprecated-declarations]
+        EC_KEY *eckey = EVP_PKEY_get1_EC_KEY(pkey);
+                        ^
+/usr/include/openssl/evp.h:1366:1: note: 'EVP_PKEY_get1_EC_KEY' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:575:41: warning: 'EC_KEY_get0_group' is deprecated [-Wdeprecated-declarations]
+        switch (EC_GROUP_get_curve_name(EC_KEY_get0_group(eckey))) {
+                                        ^
+/usr/include/openssl/ec.h:1026:1: note: 'EC_KEY_get0_group' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:590:13: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+            EC_KEY_free(eckey);
+            ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:596:13: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+            EC_KEY_free(eckey);
+            ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:936:51: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha256, SHA256_CTX, SHA256_Init, SHA256_Update, _sha256_final);
+                                                  ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:936:66: warning: 'SHA256_Final' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha256, SHA256_CTX, SHA256_Init, SHA256_Update, _sha256_final);
+                                                                 ^
+/usr/include/openssl/sha.h:76:1: note: 'SHA256_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:936:66: warning: 'SHA256_Final' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha256, SHA256_CTX, SHA256_Init, SHA256_Update, _sha256_final);
+                                                                 ^
+/usr/include/openssl/sha.h:76:1: note: 'SHA256_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:936:38: warning: 'SHA256_Init' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha256, SHA256_CTX, SHA256_Init, SHA256_Update, _sha256_final);
+                                     ^
+/usr/include/openssl/sha.h:73:1: note: 'SHA256_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:936:38: warning: 'SHA256_Init' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha256, SHA256_CTX, SHA256_Init, SHA256_Update, _sha256_final);
+                                     ^
+/usr/include/openssl/sha.h:73:1: note: 'SHA256_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:939:51: warning: 'SHA384_Update' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha384, SHA512_CTX, SHA384_Init, SHA384_Update, _sha384_final);
+                                                  ^
+/usr/include/openssl/sha.h:120:1: note: 'SHA384_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA384_Update(SHA512_CTX *c,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:939:66: warning: 'SHA384_Final' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha384, SHA512_CTX, SHA384_Init, SHA384_Update, _sha384_final);
+                                                                 ^
+/usr/include/openssl/sha.h:122:1: note: 'SHA384_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA384_Final(unsigned char *md, SHA512_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:939:66: warning: 'SHA384_Final' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha384, SHA512_CTX, SHA384_Init, SHA384_Update, _sha384_final);
+                                                                 ^
+/usr/include/openssl/sha.h:122:1: note: 'SHA384_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA384_Final(unsigned char *md, SHA512_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:939:38: warning: 'SHA384_Init' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha384, SHA512_CTX, SHA384_Init, SHA384_Update, _sha384_final);
+                                     ^
+/usr/include/openssl/sha.h:119:1: note: 'SHA384_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA384_Init(SHA512_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:939:38: warning: 'SHA384_Init' is deprecated [-Wdeprecated-declarations]
+ptls_define_hash(sha384, SHA512_CTX, SHA384_Init, SHA384_Update, _sha384_final);
+                                     ^
+/usr/include/openssl/sha.h:119:1: note: 'SHA384_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA384_Init(SHA512_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1034:25: warning: 'EVP_PKEY_get1_EC_KEY' is deprecated [-Wdeprecated-declarations]
+        EC_KEY *eckey = EVP_PKEY_get1_EC_KEY(key);
+                        ^
+/usr/include/openssl/evp.h:1366:1: note: 'EVP_PKEY_get1_EC_KEY' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1035:41: warning: 'EC_KEY_get0_group' is deprecated [-Wdeprecated-declarations]
+        switch (EC_GROUP_get_curve_name(EC_KEY_get0_group(eckey))) {
+                                        ^
+/usr/include/openssl/ec.h:1026:1: note: 'EC_KEY_get0_group' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1050:13: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+            EC_KEY_free(eckey);
+            ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1053:9: warning: 'EC_KEY_free' is deprecated [-Wdeprecated-declarations]
+        EC_KEY_free(eckey);
+        ^
+/usr/include/openssl/ec.h:995:1: note: 'EC_KEY_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1349:17: warning: 'HMAC_CTX_new' is deprecated [-Wdeprecated-declarations]
+    if ((hctx = HMAC_CTX_new()) == NULL) {
+                ^
+/usr/include/openssl/hmac.h:33:1: note: 'HMAC_CTX_new' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 HMAC_CTX *HMAC_CTX_new(void);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1379:10: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+    if (!HMAC_Update(hctx, buf->base + buf->off, dst - (buf->base + buf->off)) || !HMAC_Final(hctx, dst, NULL)) {
+         ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1379:84: warning: 'HMAC_Final' is deprecated [-Wdeprecated-declarations]
+    if (!HMAC_Update(hctx, buf->base + buf->off, dst - (buf->base + buf->off)) || !HMAC_Final(hctx, dst, NULL)) {
+                                                                                   ^
+/usr/include/openssl/hmac.h:47:1: note: 'HMAC_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Final(HMAC_CTX *ctx, unsigned char *md,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1383:12: warning: 'HMAC_size' is deprecated [-Wdeprecated-declarations]
+    dst += HMAC_size(hctx);
+           ^
+/usr/include/openssl/hmac.h:32:1: note: 'HMAC_size' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 size_t HMAC_size(const HMAC_CTX *e);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1393:9: warning: 'HMAC_CTX_free' is deprecated [-Wdeprecated-declarations]
+        HMAC_CTX_free(hctx);
+        ^
+/usr/include/openssl/hmac.h:35:1: note: 'HMAC_CTX_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void HMAC_CTX_free(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1408:17: warning: 'HMAC_CTX_new' is deprecated [-Wdeprecated-declarations]
+    if ((hctx = HMAC_CTX_new()) == NULL) {
+                ^
+/usr/include/openssl/hmac.h:33:1: note: 'HMAC_CTX_new' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 HMAC_CTX *HMAC_CTX_new(void);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1425:24: warning: 'HMAC_size' is deprecated [-Wdeprecated-declarations]
+    size_t hmac_size = HMAC_size(hctx);
+                       ^
+/usr/include/openssl/hmac.h:32:1: note: 'HMAC_size' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 size_t HMAC_size(const HMAC_CTX *e);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1432:10: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+    if (!HMAC_Update(hctx, src.base, src.len) || !HMAC_Final(hctx, hmac, NULL)) {
+         ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1432:51: warning: 'HMAC_Final' is deprecated [-Wdeprecated-declarations]
+    if (!HMAC_Update(hctx, src.base, src.len) || !HMAC_Final(hctx, hmac, NULL)) {
+                                                  ^
+/usr/include/openssl/hmac.h:47:1: note: 'HMAC_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Final(HMAC_CTX *ctx, unsigned char *md,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/deps/picotls/lib/openssl.c:1463:9: warning: 'HMAC_CTX_free' is deprecated [-Wdeprecated-declarations]
+        HMAC_CTX_free(hctx);
+        ^
+/usr/include/openssl/hmac.h:35:1: note: 'HMAC_CTX_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void HMAC_CTX_free(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+40 warnings generated.
+/home/kunaicito/Documents/759/h2o/deps/quicly/lib/quicly.c:4714:17: warning: variable 'is_late_ack' set but not used [-Wunused-but-set-variable]
+            int is_late_ack = 0;
+                ^
+1 warning generated.
+/home/kunaicito/Documents/759/h2o/lib/http2/cache_digests.c:150:5: warning: 'SHA256_Init' is deprecated [-Wdeprecated-declarations]
+    SHA256_Init(&ctx);
+    ^
+/usr/include/openssl/sha.h:73:1: note: 'SHA256_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/cache_digests.c:151:5: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+    SHA256_Update(&ctx, url, url_len);
+    ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/cache_digests.c:152:5: warning: 'SHA256_Update' is deprecated [-Wdeprecated-declarations]
+    SHA256_Update(&ctx, etag, etag_len);
+    ^
+/usr/include/openssl/sha.h:74:1: note: 'SHA256_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/cache_digests.c:153:5: warning: 'SHA256_Final' is deprecated [-Wdeprecated-declarations]
+    SHA256_Final(md.bytes, &ctx);
+    ^
+/usr/include/openssl/sha.h:76:1: note: 'SHA256_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/casper.c:40:5: warning: 'SHA1_Init' is deprecated [-Wdeprecated-declarations]
+    SHA1_Init(&ctx);
+    ^
+/usr/include/openssl/sha.h:49:1: note: 'SHA1_Init' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA1_Init(SHA_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/casper.c:41:5: warning: 'SHA1_Update' is deprecated [-Wdeprecated-declarations]
+    SHA1_Update(&ctx, path, path_len);
+    ^
+/usr/include/openssl/sha.h:50:1: note: 'SHA1_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA1_Update(SHA_CTX *c, const void *data, size_t len);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+/home/kunaicito/Documents/759/h2o/lib/http2/casper.c:47:5: warning: 'SHA1_Final' is deprecated [-Wdeprecated-declarations]
+    SHA1_Final(md.bytes, &ctx);
+    ^
+/usr/include/openssl/sha.h:51:1: note: 'SHA1_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int SHA1_Final(unsigned char *md, SHA_CTX *c);
+^
+/usr/include/openssl/macros.h:181:31: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#define OSSL_DEPRECATEDIN_3_0 OSSL_DEPRECATED(3.0)
+                              ^
+/usr/include/openssl/macros.h:61:47: note: expanded from macro 'OSSL_DEPRECATED'
+#define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                              ^
+4 warnings generated.
+3 warnings generated.

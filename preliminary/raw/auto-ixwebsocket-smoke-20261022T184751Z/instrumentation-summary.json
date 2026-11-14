@@ -1,0 +1,14 @@
+{
+  "selection_mode": "automatic",
+  "callback_sites": 4,
+  "skipped_candidates": 0,
+  "discovery": {
+    "candidate_transition_writes": 4,
+    "enum_declarations": 7,
+    "parse_failures": 0,
+    "state_storage_declarations": 5,
+    "state_types_detected": 5,
+    "translation_units_parsed": 1,
+    "translation_units_requested": 1
+  }
+}

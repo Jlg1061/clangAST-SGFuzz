@@ -1,0 +1,52 @@
+{
+  "candidate_transition_writes": [],
+  "clang": {
+    "arguments": [
+      "-std=c++14"
+    ],
+    "ast_filter": null,
+    "executable": "auto",
+    "jobs": 1,
+    "version": "clang: Debian clang version 14.0.6; clang++: Debian clang version 14.0.6"
+  },
+  "enum_declarations": [],
+  "mode": "dry-run",
+  "parse_failures": [
+    {
+      "source": "sgfuzz-ast-bad-source-taq7rdlt/broken.cpp",
+      "stderr": "sgfuzz-ast-bad-source-taq7rdlt/broken.cpp:2:11: error: expected '}'\nvoid f() {\n          ^\nsgfuzz-ast-bad-source-taq7rdlt/broken.cpp:2:10: note: to match this '{'\nvoid f() {\n         ^\n1 error generated.\n"
+    }
+  ],
+  "schema": "sgfuzz-clang-ast-dry-run-v3",
+  "selection_mode": "focused",
+  "source_root": "/tmp/sgfuzz-ast-bad-source-taq7rdlt",
+  "state_storage": [],
+  "state_type": "State",
+  "summary": {
+    "candidate_transition_writes": 0,
+    "enum_declarations": 0,
+    "parse_failures": 1,
+    "state_storage_declarations": 0,
+    "state_types_detected": 0,
+    "translation_units_parsed": 0,
+    "translation_units_requested": 1
+  },
+  "target_source_modified": false,
+  "translation_units": [
+    {
+      "command": [
+        "clang++",
+        "-std=c++14",
+        "-Xclang",
+        "-ast-dump=json",
+        "-fsyntax-only",
+        "sgfuzz-ast-bad-source-taq7rdlt/broken.cpp"
+      ],
+      "elapsed_seconds": 0.026644,
+      "exit_code": 1,
+      "source": "sgfuzz-ast-bad-source-taq7rdlt/broken.cpp",
+      "status": "parse-failed",
+      "stderr": "sgfuzz-ast-bad-source-taq7rdlt/broken.cpp:2:11: error: expected '}'\nvoid f() {\n          ^\nsgfuzz-ast-bad-source-taq7rdlt/broken.cpp:2:10: note: to match this '{'\nvoid f() {\n         ^\n1 error generated.\n"
+    }
+  ]
+}

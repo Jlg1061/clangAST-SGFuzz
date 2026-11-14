@@ -1,0 +1,187 @@
+{
+  "schema": "sgfuzz-clang-ast-test-v2",
+  "tests": [
+    {
+      "test": "direct-unscoped",
+      "status": "pass",
+      "candidate": {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "line-direct-unscoped-control/target.cpp",
+          "line": 16,
+          "offset": 220
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 16,
+          "begin_offset": 220,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 245,
+          "end_offset_exclusive": 246,
+          "end_token_length": null,
+          "file": "line-direct-unscoped-control/target.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ConnectionState",
+        "storage_decl_id": "0x33696800",
+        "storage_kind": "direct",
+        "storage_name": "current_state"
+      }
+    },
+    {
+      "test": "direct-scoped",
+      "status": "pass",
+      "candidate": {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "line-direct-scoped-variant/target.cpp",
+          "line": 16,
+          "offset": 258
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 16,
+          "begin_offset": 258,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 283,
+          "end_offset_exclusive": 284,
+          "end_token_length": null,
+          "file": "line-direct-scoped-variant/target.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ConnectionState",
+        "storage_decl_id": "0xc07a890",
+        "storage_kind": "direct",
+        "storage_name": "current_state"
+      }
+    },
+    {
+      "test": "atomic-unscoped",
+      "status": "pass",
+      "candidate": {
+        "assignment_ast_kind": "overloaded-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "line-atomic-unscoped-variant/target.cpp",
+          "line": 17,
+          "offset": 250
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 17,
+          "begin_offset": 250,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 275,
+          "end_offset_exclusive": 276,
+          "end_token_length": null,
+          "file": "line-atomic-unscoped-variant/target.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ConnectionState",
+        "storage_decl_id": "0x3a3d9060",
+        "storage_kind": "atomic",
+        "storage_name": "current_state"
+      }
+    },
+    {
+      "test": "c-direct-enum-copy-and-instrument",
+      "status": "pass",
+      "candidate": {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 5,
+          "file": "c-direct-enum-control/target.c",
+          "line": 16,
+          "offset": 230
+        },
+        "assignment_range": {
+          "begin_column": 5,
+          "begin_line": 16,
+          "begin_offset": 230,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 255,
+          "end_offset_exclusive": 256,
+          "end_token_length": null,
+          "file": "c-direct-enum-control/target.c"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ConnectionState",
+        "storage_decl_id": "0x324663d0",
+        "storage_kind": "direct",
+        "storage_name": "current_state"
+      }
+    },
+    {
+      "test": "c-anonymous-enum-copy-and-instrument",
+      "status": "pass"
+    },
+    {
+      "test": "ixwebsocket-primary-automatic",
+      "status": "pass",
+      "candidate": {
+        "assignment_ast_kind": "overloaded-operator=",
+        "assignment_location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 237,
+          "offset": 8552
+        },
+        "assignment_range": {
+          "begin_column": 9,
+          "begin_line": 237,
+          "begin_offset": 8552,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 8575,
+          "end_offset_exclusive": 8576,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketTransport::ReadyState",
+        "storage_decl_id": "0x12d4f830",
+        "storage_kind": "atomic",
+        "storage_name": "_readyState"
+      }
+    },
+    {
+      "test": "wrong-type-negative",
+      "status": "pass"
+    },
+    {
+      "test": "parse-failure-recording",
+      "status": "pass"
+    },
+    {
+      "test": "compact-source-location-parser",
+      "status": "pass"
+    }
+  ],
+  "passed": 9,
+  "failed": 0,
+  "primary_source": "/home/kunaicito/Documents/759/IXWebSocket/ixwebsocket/IXWebSocketTransport.cpp",
+  "primary_sha256_before": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "primary_sha256_after": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "primary_source_unchanged": true
+}

@@ -1,0 +1,2165 @@
+{
+  "callback_sites": 15,
+  "discovery": {
+    "candidate_transition_writes": [
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 101,
+          "offset": 2971
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 101,
+          "begin_offset": 2971,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 3004,
+          "end_offset_exclusive": 3005,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 105,
+          "offset": 3066
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 105,
+          "begin_offset": 3066,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 3101,
+          "end_offset_exclusive": 3102,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 121,
+          "offset": 3788
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 121,
+          "begin_offset": 3788,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 3828,
+          "end_offset_exclusive": 3829,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 125,
+          "offset": 3938
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 125,
+          "begin_offset": 3938,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 3979,
+          "end_offset_exclusive": 3980,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 17,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 141,
+          "offset": 4527
+        },
+        "assignment_range": {
+          "begin_column": 17,
+          "begin_line": 141,
+          "begin_offset": 4527,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 4560,
+          "end_offset_exclusive": 4561,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 152,
+          "offset": 4948
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 152,
+          "begin_offset": 4948,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 4981,
+          "end_offset_exclusive": 4982,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::PollResultType",
+        "storage_decl_id": "0xcb7d408",
+        "storage_kind": "direct",
+        "storage_name": "pollResult"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 325,
+          "offset": 11369
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 325,
+          "begin_offset": 11369,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 11407,
+          "end_offset_exclusive": 11408,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXUrlParser.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "(anonymousnamespace)::LUrlParserError",
+        "storage_decl_id": "0x25cc76a0",
+        "storage_kind": "direct",
+        "storage_name": "m_ErrorCode"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 345,
+          "offset": 11938
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 345,
+          "begin_offset": 11938,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 11976,
+          "end_offset_exclusive": 11977,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXUrlParser.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "(anonymousnamespace)::LUrlParserError",
+        "storage_decl_id": "0x25cc76a0",
+        "storage_kind": "direct",
+        "storage_name": "m_ErrorCode"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 17,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 361,
+          "offset": 12439
+        },
+        "assignment_range": {
+          "begin_column": 17,
+          "begin_line": 361,
+          "begin_offset": 12439,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 12477,
+          "end_offset_exclusive": 12478,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXUrlParser.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "(anonymousnamespace)::LUrlParserError",
+        "storage_decl_id": "0x25cc76a0",
+        "storage_kind": "direct",
+        "storage_name": "m_ErrorCode"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 9,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 376,
+          "offset": 12871
+        },
+        "assignment_range": {
+          "begin_column": 9,
+          "begin_line": 376,
+          "begin_offset": 12871,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 12909,
+          "end_offset_exclusive": 12910,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXUrlParser.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "(anonymousnamespace)::LUrlParserError",
+        "storage_decl_id": "0x25cc76a0",
+        "storage_kind": "direct",
+        "storage_name": "m_ErrorCode"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 29,
+          "file": "(lambda at ixwebsocket/IXWebSocket.cpp",
+          "line": 424,
+          "offset": null
+        },
+        "assignment_range": {
+          "begin_column": 29,
+          "begin_line": 424,
+          "begin_offset": null,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": null,
+          "end_offset_exclusive": null,
+          "end_token_length": null,
+          "file": "(lambda at ixwebsocket/IXWebSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketMessageType",
+        "storage_decl_id": "0x2e800250",
+        "storage_kind": "direct",
+        "storage_name": "webSocketMessageType"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 29,
+          "file": "class (lambda at ixwebsocket/IXWebSocket.cpp",
+          "line": 424,
+          "offset": null
+        },
+        "assignment_range": {
+          "begin_column": 29,
+          "begin_line": 424,
+          "begin_offset": null,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": null,
+          "end_offset_exclusive": null,
+          "end_token_length": null,
+          "file": "class (lambda at ixwebsocket/IXWebSocket.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketMessageType",
+        "storage_decl_id": "0x2e800250",
+        "storage_kind": "direct",
+        "storage_name": "webSocketMessageType"
+      },
+      {
+        "assignment_ast_kind": "overloaded-operator=",
+        "assignment_location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 237,
+          "offset": 8552
+        },
+        "assignment_range": {
+          "begin_column": 9,
+          "begin_line": 237,
+          "begin_offset": 8552,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 8575,
+          "end_offset_exclusive": 8576,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketTransport::ReadyState",
+        "storage_decl_id": "0x28a77280",
+        "storage_kind": "atomic",
+        "storage_name": "_readyState"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 267,
+          "offset": 9538
+        },
+        "assignment_range": {
+          "begin_column": 9,
+          "begin_line": 267,
+          "begin_offset": 9538,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 9557,
+          "end_offset_exclusive": 9558,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::SendMessageKind",
+        "storage_decl_id": "0x28b1fd30",
+        "storage_kind": "direct",
+        "storage_name": "_pingType"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 13,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 476,
+          "offset": 17494
+        },
+        "assignment_range": {
+          "begin_column": 13,
+          "begin_line": 476,
+          "begin_offset": 17494,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 17549,
+          "end_offset_exclusive": 17550,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "storage_decl_id": "0x28990fc8",
+        "storage_kind": "direct",
+        "storage_name": "opcode"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 21,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 579,
+          "offset": 21396
+        },
+        "assignment_range": {
+          "begin_column": 21,
+          "begin_line": 579,
+          "begin_offset": 21396,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 21608,
+          "end_offset_exclusive": 21609,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketTransport::MessageKind",
+        "storage_decl_id": "0x289c0398",
+        "storage_kind": "direct",
+        "storage_name": "_fragmentedMessageKind"
+      },
+      {
+        "assignment_ast_kind": "direct-operator=",
+        "assignment_location": {
+          "column": 21,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 917,
+          "offset": 34459
+        },
+        "assignment_range": {
+          "begin_column": 21,
+          "begin_line": 917,
+          "begin_offset": 34459,
+          "end_column": null,
+          "end_line": null,
+          "end_offset": 34498,
+          "end_offset_exclusive": 34499,
+          "end_token_length": null,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp"
+        },
+        "rewrite_safety": {
+          "parent_ast_kind": "CompoundStmt",
+          "standalone_statement": true
+        },
+        "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "storage_decl_id": "0x28f7fa40",
+        "storage_kind": "direct",
+        "storage_name": "opcodeType"
+      }
+    ],
+    "clang": {
+      "arguments": [
+        "-std=c++11",
+        "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+        "-DIXWEBSOCKET_USE_ZLIB"
+      ],
+      "ast_filter": null,
+      "executable": "auto",
+      "jobs": 4,
+      "version": "clang: Debian clang version 14.0.6; clang++: Debian clang version 14.0.6"
+    },
+    "enum_declarations": [
+      {
+        "location": {
+          "column": 3,
+          "file": "const class (lambda at ixwebsocket/IXCancellationRequest.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXSocket.h",
+          "line": 24,
+          "offset": 410
+        },
+        "name": "PollResultType"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXHttp.h",
+          "line": 18,
+          "offset": 295
+        },
+        "name": "HttpErrorCode"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "class (lambda at ixwebsocket/IXHttpClient.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "class (lambda at ixwebsocket/IXHttpServer.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXWebSocketMessageType.h",
+          "line": 11,
+          "offset": 168
+        },
+        "name": "WebSocketMessageType"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 36,
+          "offset": 760
+        },
+        "name": "SendMessageKind"
+      },
+      {
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 46,
+          "offset": 899
+        },
+        "name": "ReadyState"
+      },
+      {
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 54,
+          "offset": 1033
+        },
+        "name": "MessageKind"
+      },
+      {
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 63,
+          "offset": 1189
+        },
+        "name": "PollResult"
+      },
+      {
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 132,
+          "offset": 3941
+        },
+        "name": "opcode_type"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXWebSocket.h",
+          "line": 32,
+          "offset": 781
+        },
+        "name": "ReadyState"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXSocketServer.h",
+          "line": 28,
+          "offset": 493
+        },
+        "name": "LogLevel"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "class (lambda at ixwebsocket/IXSocketServer.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 5,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 40,
+          "offset": 1493
+        },
+        "name": "LUrlParserError"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "class (lambda at ixwebsocket/IXWebSocket.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "const class (lambda at ixwebsocket/IXWebSocketProxyServer.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      },
+      {
+        "location": {
+          "column": 3,
+          "file": "class (lambda at ixwebsocket/IXWebSocketServer.cpp",
+          "line": 102,
+          "offset": null
+        },
+        "name": "_Manager_operation"
+      }
+    ],
+    "mode": "dry-run",
+    "parse_failures": [],
+    "schema": "sgfuzz-clang-ast-dry-run-v3",
+    "selection_mode": "automatic",
+    "source_root": "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket",
+    "state_storage": [
+      {
+        "canonical_type": "ix::HttpErrorCode",
+        "decl_id": "0xfe794c0",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXHttp.h",
+          "line": 43,
+          "offset": 880
+        },
+        "name": "errorCode",
+        "spelled_type": "ix::HttpErrorCode",
+        "state_type": "ix::HttpErrorCode",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::HttpErrorCode",
+        "decl_id": "0x36f21408",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 13,
+          "file": "(lambda at ixwebsocket/IXHttpClient.cpp",
+          "line": 266,
+          "offset": null
+        },
+        "name": "errorCode",
+        "spelled_type": "ix::HttpErrorCode",
+        "state_type": "ix::HttpErrorCode",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketMessageType",
+        "decl_id": "0x3421bc78",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketMessage.h",
+          "line": 20,
+          "offset": 376
+        },
+        "name": "type",
+        "spelled_type": "ix::WebSocketMessageType",
+        "state_type": "ix::WebSocketMessageType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "decl_id": "0x349f4d58",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 132,
+          "offset": 3941
+        },
+        "name": "opcode",
+        "spelled_type": "enum opcode_type",
+        "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketTransport::MessageKind",
+        "decl_id": "0x34a1ffd8",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 185,
+          "offset": 6237
+        },
+        "name": "_fragmentedMessageKind",
+        "spelled_type": "ix::WebSocketTransport::MessageKind",
+        "state_type": "ix::WebSocketTransport::MessageKind",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "std::atomic<ix::WebSocketTransport::ReadyState>",
+        "decl_id": "0x34ad6f40",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 198,
+          "offset": 6641
+        },
+        "name": "_readyState",
+        "spelled_type": "std::atomic<ReadyState>",
+        "state_type": "ix::WebSocketTransport::ReadyState",
+        "storage_kind": "atomic"
+      },
+      {
+        "canonical_type": "ix::SendMessageKind",
+        "decl_id": "0x34b7e0a0",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.h",
+          "line": 239,
+          "offset": 8131
+        },
+        "name": "_pingType",
+        "spelled_type": "ix::SendMessageKind",
+        "state_type": "ix::SendMessageKind",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::SendMessageKind",
+        "decl_id": "0x34cd81d8",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocket.h",
+          "line": 181,
+          "offset": 7294
+        },
+        "name": "_pingType",
+        "spelled_type": "ix::SendMessageKind",
+        "state_type": "ix::SendMessageKind",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::PollResultType",
+        "decl_id": "0xcb7d408",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXSocket.cpp",
+          "line": 49,
+          "offset": 1051
+        },
+        "name": "pollResult",
+        "spelled_type": "ix::PollResultType",
+        "state_type": "ix::PollResultType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::PollResultType",
+        "decl_id": "0x279ce288",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocketConnect.cpp",
+          "line": 69,
+          "offset": 1994
+        },
+        "name": "pollResult",
+        "spelled_type": "ix::PollResultType",
+        "state_type": "ix::PollResultType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::PollResultType",
+        "decl_id": "0x381cc508",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXSocketServer.cpp",
+          "line": 339,
+          "offset": 10748
+        },
+        "name": "pollResult",
+        "spelled_type": "ix::PollResultType",
+        "state_type": "ix::PollResultType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "(anonymous namespace)::LUrlParserError",
+        "decl_id": "0x25cc76a0",
+        "declaration_kind": "FieldDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXUrlParser.cpp",
+          "line": 64,
+          "offset": 2392
+        },
+        "name": "m_ErrorCode",
+        "spelled_type": "(anonymous namespace)::LUrlParserError",
+        "state_type": "(anonymousnamespace)::LUrlParserError",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketTransport::PollResult",
+        "decl_id": "0x2e7ffac0",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXWebSocket.cpp",
+          "line": 408,
+          "offset": 13076
+        },
+        "name": "pollResult",
+        "spelled_type": "WebSocketTransport::PollResult",
+        "state_type": "ix::WebSocketTransport::PollResult",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketMessageType",
+        "decl_id": "0x2e800250",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 21,
+          "file": "class (lambda at ixwebsocket/IXWebSocket.cpp",
+          "line": 418,
+          "offset": null
+        },
+        "name": "webSocketMessageType",
+        "spelled_type": "ix::WebSocketMessageType",
+        "state_type": "ix::WebSocketMessageType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::PollResultType",
+        "decl_id": "0x28f259f0",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 9,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 366,
+          "offset": 13177
+        },
+        "name": "pollResult",
+        "spelled_type": "ix::PollResultType",
+        "state_type": "ix::PollResultType",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "decl_id": "0x28f7fa40",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 17,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 914,
+          "offset": 34365
+        },
+        "name": "opcodeType",
+        "spelled_type": "wsheader_type::opcode_type",
+        "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+        "storage_kind": "direct"
+      },
+      {
+        "canonical_type": "ix::PollResultType",
+        "decl_id": "0x28f9fbd0",
+        "declaration_kind": "VarDecl",
+        "location": {
+          "column": 13,
+          "file": "ixwebsocket/IXWebSocketTransport.cpp",
+          "line": 1269,
+          "offset": 46167
+        },
+        "name": "result",
+        "spelled_type": "ix::PollResultType",
+        "state_type": "ix::PollResultType",
+        "storage_kind": "direct"
+      }
+    ],
+    "state_type": null,
+    "summary": {
+      "candidate_transition_writes": 17,
+      "enum_declarations": 18,
+      "parse_failures": 0,
+      "state_storage_declarations": 17,
+      "state_types_detected": 9,
+      "translation_units_parsed": 36,
+      "translation_units_requested": 36
+    },
+    "target_source_modified": false,
+    "translation_units": [
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXBench.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 6.974026,
+        "source": "ixwebsocket/IXBench.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXCancellationRequest.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 1.405268,
+        "source": "ixwebsocket/IXCancellationRequest.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXConnectionState.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 5.420825,
+        "source": "ixwebsocket/IXConnectionState.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXDNSLookup.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 7.310267,
+        "source": "ixwebsocket/IXDNSLookup.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXExponentialBackoff.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 0.393204,
+        "source": "ixwebsocket/IXExponentialBackoff.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXGetFreePort.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 10.612104,
+        "source": "ixwebsocket/IXGetFreePort.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXGzipCodec.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 3.550418,
+        "source": "ixwebsocket/IXGzipCodec.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXHttp.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 13.73435,
+        "source": "ixwebsocket/IXHttp.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXHttpClient.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 24.133848,
+        "source": "ixwebsocket/IXHttpClient.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXHttpServer.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 18.103809,
+        "source": "ixwebsocket/IXHttpServer.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXNetSystem.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 0.248619,
+        "source": "ixwebsocket/IXNetSystem.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSelectInterrupt.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 5.054326,
+        "source": "ixwebsocket/IXSelectInterrupt.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSelectInterruptFactory.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 5.621474,
+        "source": "ixwebsocket/IXSelectInterruptFactory.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSelectInterruptPipe.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 8.849895,
+        "source": "ixwebsocket/IXSelectInterruptPipe.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSelectInterruptEvent.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 7.932559,
+        "source": "ixwebsocket/IXSelectInterruptEvent.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSetThreadName.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 3.293651,
+        "source": "ixwebsocket/IXSetThreadName.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSocket.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 8.929741,
+        "source": "ixwebsocket/IXSocket.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSocketConnect.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 7.087119,
+        "source": "ixwebsocket/IXSocketConnect.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSocketFactory.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 6.293993,
+        "source": "ixwebsocket/IXSocketFactory.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSocketServer.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 13.401684,
+        "source": "ixwebsocket/IXSocketServer.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXSocketTLSOptions.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 7.363522,
+        "source": "ixwebsocket/IXSocketTLSOptions.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXStrCaseCompare.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 8.027103,
+        "source": "ixwebsocket/IXStrCaseCompare.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXUdpSocket.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 7.704269,
+        "source": "ixwebsocket/IXUdpSocket.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXUrlParser.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 5.234913,
+        "source": "ixwebsocket/IXUrlParser.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXUuid.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 13.592529,
+        "source": "ixwebsocket/IXUuid.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXUserAgent.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 6.632089,
+        "source": "ixwebsocket/IXUserAgent.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocket.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 14.932647,
+        "source": "ixwebsocket/IXWebSocket.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketCloseConstants.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 3.24072,
+        "source": "ixwebsocket/IXWebSocketCloseConstants.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketHandshake.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 27.680404,
+        "source": "ixwebsocket/IXWebSocketHandshake.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketHttpHeaders.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 8.963652,
+        "source": "ixwebsocket/IXWebSocketHttpHeaders.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketPerMessageDeflate.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 6.601138,
+        "source": "ixwebsocket/IXWebSocketPerMessageDeflate.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 6.35498,
+        "source": "ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 8.279375,
+        "source": "ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketProxyServer.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 15.910185,
+        "source": "ixwebsocket/IXWebSocketProxyServer.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketServer.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 14.363112,
+        "source": "ixwebsocket/IXWebSocketServer.cpp",
+        "status": "ok"
+      },
+      {
+        "analysis_command": [
+          "clang++",
+          "-std=c++11",
+          "-I/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+          "-DIXWEBSOCKET_USE_ZLIB",
+          "-Xclang",
+          "-ast-dump",
+          "-fsyntax-only",
+          "ixwebsocket/IXWebSocketTransport.cpp"
+        ],
+        "automatic_ast_format": "clang-text-ast",
+        "automatic_ast_passes": 1,
+        "elapsed_seconds": 11.436114,
+        "source": "ixwebsocket/IXWebSocketTransport.cpp",
+        "status": "ok"
+      }
+    ]
+  },
+  "input_root": "/home/kunaicito/Documents/759/IXWebSocket",
+  "input_source_modified": false,
+  "input_source_sha256_after": {
+    "ixwebsocket/IXBench.cpp": "e97d797ada2a978b82fcc00c0cc7d54738fda5c0cbce7ab7fb9cd4df9ae49e89",
+    "ixwebsocket/IXCancellationRequest.cpp": "a7e6fa7ce4e664bd10aeef5d364f281e608114bee7d79866bbb1001deba45b2f",
+    "ixwebsocket/IXConnectionState.cpp": "3db8ae627ee4b24473b2106e05a43b2bdc846cdd2943a7a423d4db565384b693",
+    "ixwebsocket/IXDNSLookup.cpp": "492ffb1c4b112b2a90f2b8d6bf73d0b47b03e669d04d1c0dc2b345f6e9da5336",
+    "ixwebsocket/IXExponentialBackoff.cpp": "119eb794c562fe0329cf764ce67f31897b9d5c40623a6cd6329b10985b70d598",
+    "ixwebsocket/IXGetFreePort.cpp": "3223efb8468f6ff05e7e7bfd47de252e0c7c1073ee955b8926b1c1e1b1ad8eeb",
+    "ixwebsocket/IXGzipCodec.cpp": "827b0fb1f6b1650213d6f16d3a9c555d3c7223a517688a15edc9a2566198b87c",
+    "ixwebsocket/IXHttp.cpp": "800be8dc2d0dd500b6aeb9de06beb0a431ddabbe11303d77188117ab50363677",
+    "ixwebsocket/IXHttpClient.cpp": "284443f82a9bd21221c2079e2c9f2cf77005656697a5d2782fd75a1a879864bc",
+    "ixwebsocket/IXHttpServer.cpp": "989d0a81bcdf285bbb207559ec4505783e1252683d9054296dd2bb4b11fef61c",
+    "ixwebsocket/IXNetSystem.cpp": "480a10b9e953c1d51c408d9cb07c2c20f1cc6664d77cc92d368316ecc61dc76e",
+    "ixwebsocket/IXSelectInterrupt.cpp": "b7b72158a1c463a998df1ab774f771d23e28a6f4ce4af0dfebba6b9967a5e318",
+    "ixwebsocket/IXSelectInterruptEvent.cpp": "e2713c90e5f3b3cd58a2da8c640ebd244db020199ce0d1d0ffc7c41fc4d41986",
+    "ixwebsocket/IXSelectInterruptFactory.cpp": "400c23779cb48838d8c7d0effbdc72e15e2604873fd2fb3cc827c91ba52a95ce",
+    "ixwebsocket/IXSelectInterruptPipe.cpp": "96d27d6833532b66bb21254a324fd69e4eeede4f57c95d0dab7e34c264d232b8",
+    "ixwebsocket/IXSetThreadName.cpp": "7c93fe1753270af36d2a0bc3b0316766820e9fd8f85af741f27939cb42cb2824",
+    "ixwebsocket/IXSocket.cpp": "3d26669ce56f6f4b93ef2b9d8709105cdb3d71fe650235bcd5052a0101054c8c",
+    "ixwebsocket/IXSocketConnect.cpp": "a649b0a008df7fe000b57e2cb9a5ef9c109e48a2ec2eedd495f6fd90f4476e0e",
+    "ixwebsocket/IXSocketFactory.cpp": "942bdab77e50a3422538dfdfec537b79c46b14f345de45f112c557f926bb1049",
+    "ixwebsocket/IXSocketServer.cpp": "2555e28d95e88d34c33499d10999a3ae3dc8aa9eaac73279b5710ffc8794f721",
+    "ixwebsocket/IXSocketTLSOptions.cpp": "b45926be3c736cb18d0d4cbf522b5cae49a50d529a98931d6d71e5e32ea29876",
+    "ixwebsocket/IXStrCaseCompare.cpp": "a24da125638d153a45717f7c85c18fd41cb8b7545a1fe764bd541dbc9ab82373",
+    "ixwebsocket/IXUdpSocket.cpp": "73c908de66087dc77fa6025db7e3e5f0fb087bf3af5d5f4b8704ab96e4d40602",
+    "ixwebsocket/IXUrlParser.cpp": "799de67fbfb9947404c912c6c8d49cf8e9e3cf81b5c030d05afed145f4dad83c",
+    "ixwebsocket/IXUserAgent.cpp": "f971c19f0fc5022cb463c40c637e75e3a780583bb7ea194fb79058c2c8443129",
+    "ixwebsocket/IXUuid.cpp": "fd55e10ec6f2f619202df8e7da0ae4e956959547bf9fc50fd6ce1cb7fc6165ca",
+    "ixwebsocket/IXWebSocket.cpp": "096d0f9c2064082f252938461c0f858d8c00c258778ef1608746589a55cbda4e",
+    "ixwebsocket/IXWebSocketCloseConstants.cpp": "5362d0c447335452a631787a6beb45c197b3ab5112f9d1edb30f96a44ea8d13c",
+    "ixwebsocket/IXWebSocketHandshake.cpp": "5a3b2c2da6b59090e68936f8459bd80a239cec82b0aa0f1d3aece0d632ae7f4d",
+    "ixwebsocket/IXWebSocketHttpHeaders.cpp": "0ef29c1a5be0b57457d7a834fd5b505330581d6e913cdbb3fc59dab906f0bdb8",
+    "ixwebsocket/IXWebSocketPerMessageDeflate.cpp": "b0fadcf3c3579cec46e0963cb5866c62777e716e49c201fba04d7e5ab6e01daa",
+    "ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp": "2627410c7b2265f993ee50d5ba24e47fe2a025b4394c6a87f510ade05476fd03",
+    "ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp": "6b0c5d3b121e4d6a79aa70096a34edbf6b848b3e28b7e6e979fb592eabca32ff",
+    "ixwebsocket/IXWebSocketProxyServer.cpp": "b7baf2d2ecaa19501e97d8f5fa8997bdde74ac6efc8d671af43fa1125281a4fa",
+    "ixwebsocket/IXWebSocketServer.cpp": "9d66ad6d0f7bcb86898f592d5b23dc9561b51234eb1dabb0e104ddd4bc521e4c",
+    "ixwebsocket/IXWebSocketTransport.cpp": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59"
+  },
+  "input_source_sha256_before": {
+    "ixwebsocket/IXBench.cpp": "e97d797ada2a978b82fcc00c0cc7d54738fda5c0cbce7ab7fb9cd4df9ae49e89",
+    "ixwebsocket/IXCancellationRequest.cpp": "a7e6fa7ce4e664bd10aeef5d364f281e608114bee7d79866bbb1001deba45b2f",
+    "ixwebsocket/IXConnectionState.cpp": "3db8ae627ee4b24473b2106e05a43b2bdc846cdd2943a7a423d4db565384b693",
+    "ixwebsocket/IXDNSLookup.cpp": "492ffb1c4b112b2a90f2b8d6bf73d0b47b03e669d04d1c0dc2b345f6e9da5336",
+    "ixwebsocket/IXExponentialBackoff.cpp": "119eb794c562fe0329cf764ce67f31897b9d5c40623a6cd6329b10985b70d598",
+    "ixwebsocket/IXGetFreePort.cpp": "3223efb8468f6ff05e7e7bfd47de252e0c7c1073ee955b8926b1c1e1b1ad8eeb",
+    "ixwebsocket/IXGzipCodec.cpp": "827b0fb1f6b1650213d6f16d3a9c555d3c7223a517688a15edc9a2566198b87c",
+    "ixwebsocket/IXHttp.cpp": "800be8dc2d0dd500b6aeb9de06beb0a431ddabbe11303d77188117ab50363677",
+    "ixwebsocket/IXHttpClient.cpp": "284443f82a9bd21221c2079e2c9f2cf77005656697a5d2782fd75a1a879864bc",
+    "ixwebsocket/IXHttpServer.cpp": "989d0a81bcdf285bbb207559ec4505783e1252683d9054296dd2bb4b11fef61c",
+    "ixwebsocket/IXNetSystem.cpp": "480a10b9e953c1d51c408d9cb07c2c20f1cc6664d77cc92d368316ecc61dc76e",
+    "ixwebsocket/IXSelectInterrupt.cpp": "b7b72158a1c463a998df1ab774f771d23e28a6f4ce4af0dfebba6b9967a5e318",
+    "ixwebsocket/IXSelectInterruptEvent.cpp": "e2713c90e5f3b3cd58a2da8c640ebd244db020199ce0d1d0ffc7c41fc4d41986",
+    "ixwebsocket/IXSelectInterruptFactory.cpp": "400c23779cb48838d8c7d0effbdc72e15e2604873fd2fb3cc827c91ba52a95ce",
+    "ixwebsocket/IXSelectInterruptPipe.cpp": "96d27d6833532b66bb21254a324fd69e4eeede4f57c95d0dab7e34c264d232b8",
+    "ixwebsocket/IXSetThreadName.cpp": "7c93fe1753270af36d2a0bc3b0316766820e9fd8f85af741f27939cb42cb2824",
+    "ixwebsocket/IXSocket.cpp": "3d26669ce56f6f4b93ef2b9d8709105cdb3d71fe650235bcd5052a0101054c8c",
+    "ixwebsocket/IXSocketConnect.cpp": "a649b0a008df7fe000b57e2cb9a5ef9c109e48a2ec2eedd495f6fd90f4476e0e",
+    "ixwebsocket/IXSocketFactory.cpp": "942bdab77e50a3422538dfdfec537b79c46b14f345de45f112c557f926bb1049",
+    "ixwebsocket/IXSocketServer.cpp": "2555e28d95e88d34c33499d10999a3ae3dc8aa9eaac73279b5710ffc8794f721",
+    "ixwebsocket/IXSocketTLSOptions.cpp": "b45926be3c736cb18d0d4cbf522b5cae49a50d529a98931d6d71e5e32ea29876",
+    "ixwebsocket/IXStrCaseCompare.cpp": "a24da125638d153a45717f7c85c18fd41cb8b7545a1fe764bd541dbc9ab82373",
+    "ixwebsocket/IXUdpSocket.cpp": "73c908de66087dc77fa6025db7e3e5f0fb087bf3af5d5f4b8704ab96e4d40602",
+    "ixwebsocket/IXUrlParser.cpp": "799de67fbfb9947404c912c6c8d49cf8e9e3cf81b5c030d05afed145f4dad83c",
+    "ixwebsocket/IXUserAgent.cpp": "f971c19f0fc5022cb463c40c637e75e3a780583bb7ea194fb79058c2c8443129",
+    "ixwebsocket/IXUuid.cpp": "fd55e10ec6f2f619202df8e7da0ae4e956959547bf9fc50fd6ce1cb7fc6165ca",
+    "ixwebsocket/IXWebSocket.cpp": "096d0f9c2064082f252938461c0f858d8c00c258778ef1608746589a55cbda4e",
+    "ixwebsocket/IXWebSocketCloseConstants.cpp": "5362d0c447335452a631787a6beb45c197b3ab5112f9d1edb30f96a44ea8d13c",
+    "ixwebsocket/IXWebSocketHandshake.cpp": "5a3b2c2da6b59090e68936f8459bd80a239cec82b0aa0f1d3aece0d632ae7f4d",
+    "ixwebsocket/IXWebSocketHttpHeaders.cpp": "0ef29c1a5be0b57457d7a834fd5b505330581d6e913cdbb3fc59dab906f0bdb8",
+    "ixwebsocket/IXWebSocketPerMessageDeflate.cpp": "b0fadcf3c3579cec46e0963cb5866c62777e716e49c201fba04d7e5ab6e01daa",
+    "ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp": "2627410c7b2265f993ee50d5ba24e47fe2a025b4394c6a87f510ade05476fd03",
+    "ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp": "6b0c5d3b121e4d6a79aa70096a34edbf6b848b3e28b7e6e979fb592eabca32ff",
+    "ixwebsocket/IXWebSocketProxyServer.cpp": "b7baf2d2ecaa19501e97d8f5fa8997bdde74ac6efc8d671af43fa1125281a4fa",
+    "ixwebsocket/IXWebSocketServer.cpp": "9d66ad6d0f7bcb86898f592d5b23dc9561b51234eb1dabb0e104ddd4bc521e4c",
+    "ixwebsocket/IXWebSocketTransport.cpp": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59"
+  },
+  "instrumented_files": [
+    {
+      "callback_sites": [
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 101,
+              "offset": 2971
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 101,
+              "begin_offset": 2971,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 3004,
+              "end_offset_exclusive": 3005,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_1_0",
+          "left_hand_side": "pollResult",
+          "location_id": 1,
+          "original_right_hand_side": "PollResultType::Error"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 105,
+              "offset": 3066
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 105,
+              "begin_offset": 3066,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 3101,
+              "end_offset_exclusive": 3102,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_2_0",
+          "left_hand_side": "pollResult",
+          "location_id": 2,
+          "original_right_hand_side": "PollResultType::Timeout"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 121,
+              "offset": 3788
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 121,
+              "begin_offset": 3788,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 3828,
+              "end_offset_exclusive": 3829,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_3_0",
+          "left_hand_side": "pollResult",
+          "location_id": 3,
+          "original_right_hand_side": "PollResultType::ReadyForRead"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 125,
+              "offset": 3938
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 125,
+              "begin_offset": 3938,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 3979,
+              "end_offset_exclusive": 3980,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_4_0",
+          "left_hand_side": "pollResult",
+          "location_id": 4,
+          "original_right_hand_side": "PollResultType::ReadyForWrite"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 17,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 141,
+              "offset": 4527
+            },
+            "assignment_range": {
+              "begin_column": 17,
+              "begin_line": 141,
+              "begin_offset": 4527,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 4560,
+              "end_offset_exclusive": 4561,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_5_0",
+          "left_hand_side": "pollResult",
+          "location_id": 5,
+          "original_right_hand_side": "PollResultType::Error"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXSocket.cpp",
+              "line": 152,
+              "offset": 4948
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 152,
+              "begin_offset": 4948,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 4981,
+              "end_offset_exclusive": 4982,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXSocket.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::PollResultType",
+            "storage_decl_id": "0xcb7d408",
+            "storage_kind": "direct",
+            "storage_name": "pollResult"
+          },
+          "capture_variable": "sfuzzer_ast_capture_6_0",
+          "left_hand_side": "pollResult",
+          "location_id": 6,
+          "original_right_hand_side": "PollResultType::Error"
+        }
+      ],
+      "sha256_after": "764627b5231520555e85c36e36457bc734e4a17a4c8a412b77d664674590d951",
+      "sha256_before": "3d26669ce56f6f4b93ef2b9d8709105cdb3d71fe650235bcd5052a0101054c8c",
+      "skipped_candidates": [],
+      "source": "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXSocket.cpp"
+    },
+    {
+      "callback_sites": [
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXUrlParser.cpp",
+              "line": 325,
+              "offset": 11369
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 325,
+              "begin_offset": 11369,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 11407,
+              "end_offset_exclusive": 11408,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXUrlParser.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "(anonymousnamespace)::LUrlParserError",
+            "storage_decl_id": "0x25cc76a0",
+            "storage_kind": "direct",
+            "storage_name": "m_ErrorCode"
+          },
+          "capture_variable": "sfuzzer_ast_capture_7_0",
+          "left_hand_side": "Result.m_ErrorCode",
+          "location_id": 7,
+          "original_right_hand_side": "LUrlParserError_Ok"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXUrlParser.cpp",
+              "line": 345,
+              "offset": 11938
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 345,
+              "begin_offset": 11938,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 11976,
+              "end_offset_exclusive": 11977,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXUrlParser.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "(anonymousnamespace)::LUrlParserError",
+            "storage_decl_id": "0x25cc76a0",
+            "storage_kind": "direct",
+            "storage_name": "m_ErrorCode"
+          },
+          "capture_variable": "sfuzzer_ast_capture_8_0",
+          "left_hand_side": "Result.m_ErrorCode",
+          "location_id": 8,
+          "original_right_hand_side": "LUrlParserError_Ok"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 17,
+              "file": "ixwebsocket/IXUrlParser.cpp",
+              "line": 361,
+              "offset": 12439
+            },
+            "assignment_range": {
+              "begin_column": 17,
+              "begin_line": 361,
+              "begin_offset": 12439,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 12477,
+              "end_offset_exclusive": 12478,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXUrlParser.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "(anonymousnamespace)::LUrlParserError",
+            "storage_decl_id": "0x25cc76a0",
+            "storage_kind": "direct",
+            "storage_name": "m_ErrorCode"
+          },
+          "capture_variable": "sfuzzer_ast_capture_9_0",
+          "left_hand_side": "Result.m_ErrorCode",
+          "location_id": 9,
+          "original_right_hand_side": "LUrlParserError_Ok"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 9,
+              "file": "ixwebsocket/IXUrlParser.cpp",
+              "line": 376,
+              "offset": 12871
+            },
+            "assignment_range": {
+              "begin_column": 9,
+              "begin_line": 376,
+              "begin_offset": 12871,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 12909,
+              "end_offset_exclusive": 12910,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXUrlParser.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "(anonymousnamespace)::LUrlParserError",
+            "storage_decl_id": "0x25cc76a0",
+            "storage_kind": "direct",
+            "storage_name": "m_ErrorCode"
+          },
+          "capture_variable": "sfuzzer_ast_capture_10_0",
+          "left_hand_side": "Result.m_ErrorCode",
+          "location_id": 10,
+          "original_right_hand_side": "LUrlParserError_Ok"
+        }
+      ],
+      "sha256_after": "bdd74b5f3773080bfc29b16d79f6c6e21ece4d1045ec8f84732f7dcf3d870e32",
+      "sha256_before": "799de67fbfb9947404c912c6c8d49cf8e9e3cf81b5c030d05afed145f4dad83c",
+      "skipped_candidates": [],
+      "source": "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXUrlParser.cpp"
+    },
+    {
+      "callback_sites": [
+        {
+          "assignment": {
+            "assignment_ast_kind": "overloaded-operator=",
+            "assignment_location": {
+              "column": 9,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp",
+              "line": 237,
+              "offset": 8552
+            },
+            "assignment_range": {
+              "begin_column": 9,
+              "begin_line": 237,
+              "begin_offset": 8552,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 8575,
+              "end_offset_exclusive": 8576,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::WebSocketTransport::ReadyState",
+            "storage_decl_id": "0x28a77280",
+            "storage_kind": "atomic",
+            "storage_name": "_readyState"
+          },
+          "capture_variable": "sfuzzer_ast_capture_11_0",
+          "left_hand_side": "_readyState",
+          "location_id": 11,
+          "original_right_hand_side": "readyState"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 9,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp",
+              "line": 267,
+              "offset": 9538
+            },
+            "assignment_range": {
+              "begin_column": 9,
+              "begin_line": 267,
+              "begin_offset": 9538,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 9557,
+              "end_offset_exclusive": 9558,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::SendMessageKind",
+            "storage_decl_id": "0x28b1fd30",
+            "storage_kind": "direct",
+            "storage_name": "_pingType"
+          },
+          "capture_variable": "sfuzzer_ast_capture_12_0",
+          "left_hand_side": "_pingType",
+          "location_id": 12,
+          "original_right_hand_side": "pingType"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 13,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp",
+              "line": 476,
+              "offset": 17494
+            },
+            "assignment_range": {
+              "begin_column": 13,
+              "begin_line": 476,
+              "begin_offset": 17494,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 17549,
+              "end_offset_exclusive": 17550,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+            "storage_decl_id": "0x28990fc8",
+            "storage_kind": "direct",
+            "storage_name": "opcode"
+          },
+          "capture_variable": "sfuzzer_ast_capture_13_0",
+          "left_hand_side": "ws.opcode",
+          "location_id": 13,
+          "original_right_hand_side": "(wsheader_type::opcode_type)(data[0] & 0x0f)"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 21,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp",
+              "line": 579,
+              "offset": 21396
+            },
+            "assignment_range": {
+              "begin_column": 21,
+              "begin_line": 579,
+              "begin_offset": 21396,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 21608,
+              "end_offset_exclusive": 21609,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::WebSocketTransport::MessageKind",
+            "storage_decl_id": "0x289c0398",
+            "storage_kind": "direct",
+            "storage_name": "_fragmentedMessageKind"
+          },
+          "capture_variable": "sfuzzer_ast_capture_14_0",
+          "left_hand_side": "_fragmentedMessageKind",
+          "location_id": 14,
+          "original_right_hand_side": "(ws.opcode == wsheader_type::TEXT_FRAME)\n                                                 ? MessageKind::MSG_TEXT\n                                                 : MessageKind::MSG_BINARY"
+        },
+        {
+          "assignment": {
+            "assignment_ast_kind": "direct-operator=",
+            "assignment_location": {
+              "column": 21,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp",
+              "line": 917,
+              "offset": 34459
+            },
+            "assignment_range": {
+              "begin_column": 21,
+              "begin_line": 917,
+              "begin_offset": 34459,
+              "end_column": null,
+              "end_line": null,
+              "end_offset": 34498,
+              "end_offset_exclusive": 34499,
+              "end_token_length": null,
+              "file": "ixwebsocket/IXWebSocketTransport.cpp"
+            },
+            "rewrite_safety": {
+              "parent_ast_kind": "CompoundStmt",
+              "standalone_statement": true
+            },
+            "state_type": "ix::WebSocketTransport::wsheader_type::opcode_type",
+            "storage_decl_id": "0x28f7fa40",
+            "storage_kind": "direct",
+            "storage_name": "opcodeType"
+          },
+          "capture_variable": "sfuzzer_ast_capture_15_0",
+          "left_hand_side": "opcodeType",
+          "location_id": 15,
+          "original_right_hand_side": "wsheader_type::CONTINUATION"
+        }
+      ],
+      "sha256_after": "eb6135174f1b9635d41cf84d7c46b6d652c0e6549ea74d145d23f2b503b696c1",
+      "sha256_before": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+      "skipped_candidates": [],
+      "source": "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXWebSocketTransport.cpp"
+    }
+  ],
+  "mode": "copy-and-instrument",
+  "output_root": "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z",
+  "schema": "sgfuzz-clang-ast-instrument-v3",
+  "selection_mode": "automatic",
+  "skipped_candidates": 0,
+  "state_type": null
+}

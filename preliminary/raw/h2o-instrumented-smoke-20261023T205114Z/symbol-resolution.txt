@@ -1,0 +1,5 @@
+000000000020aab0 T __interceptor_textdomain
+00000000002eb5d0 T LLVMFuzzerTestOneInput
+00000000002d7600 T main
+00000000002e31f0 T __sfuzzer_instrument
+000000000020aab0 W textdomain

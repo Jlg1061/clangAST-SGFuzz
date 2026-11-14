@@ -1,0 +1,59 @@
+{
+  "candidate_transition_writes": [],
+  "clang": {
+    "arguments": [
+      "-std=c++14",
+      "-I/home/kunaicito/Documents/759/IXWebSocket"
+    ],
+    "executable": "clang++",
+    "version": "Debian clang version 14.0.6"
+  },
+  "enum_declarations": [
+    {
+      "location": {
+        "column": 20,
+        "file": "ixwebsocket/IXWebSocketTransport.h",
+        "line": 46,
+        "offset": 910
+      },
+      "name": "ReadyState"
+    }
+  ],
+  "mode": "dry-run",
+  "parse_failures": [],
+  "schema": "sgfuzz-clang-ast-dry-run-v1",
+  "source_root": "/home/kunaicito/Documents/759/IXWebSocket/ixwebsocket",
+  "state_storage": [],
+  "state_type": "ix::WebSocketTransport::ReadyState",
+  "summary": {
+    "candidate_transition_writes": 0,
+    "enum_declarations": 1,
+    "parse_failures": 0,
+    "state_storage_declarations": 0,
+    "translation_units_parsed": 1,
+    "translation_units_requested": 1
+  },
+  "target_source_modified": false,
+  "translation_units": [
+    {
+      "ast_documents": 6,
+      "command": [
+        "clang++",
+        "-std=c++14",
+        "-I/home/kunaicito/Documents/759/IXWebSocket",
+        "-Xclang",
+        "-ast-dump=json",
+        "-Xclang",
+        "-ast-dump-filter",
+        "-Xclang",
+        "ReadyState",
+        "-fsyntax-only",
+        "ixwebsocket/IXWebSocketTransport.cpp"
+      ],
+      "elapsed_seconds": 0.561305,
+      "exit_code": 0,
+      "source": "ixwebsocket/IXWebSocketTransport.cpp",
+      "status": "ok"
+    }
+  ]
+}

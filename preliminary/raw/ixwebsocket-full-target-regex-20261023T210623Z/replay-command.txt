@@ -1,0 +1,1 @@
+ASAN_OPTIONS=detect_leaks=0 /tmp/ixwebsocket-full-target-regex-20261023T210623Z/ixwebsocket_full_target_sfuzzer -runs=0 a3-sgfuzz-clang-ast/cases/ixwebsocket-transport/seeds 

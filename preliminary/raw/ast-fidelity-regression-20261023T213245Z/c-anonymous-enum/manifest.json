@@ -1,0 +1,156 @@
+{
+  "candidate_transition_writes": [
+    {
+      "assignment_ast_kind": "direct-operator=",
+      "assignment_location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 10,
+        "offset": 259
+      },
+      "assignment_range": {
+        "begin_column": 5,
+        "begin_line": 10,
+        "begin_offset": 259,
+        "end_column": null,
+        "end_line": null,
+        "end_offset": 308,
+        "end_offset_exclusive": 309,
+        "end_token_length": null,
+        "file": "c-anonymous-enum-control/target.c"
+      },
+      "rewrite_safety": {
+        "parent_ast_kind": "CompoundStmt",
+        "standalone_statement": true
+      },
+      "state_type": "anonymous enum at c-anonymous-enum-control/target.c:7:5",
+      "storage_decl_id": "0x2b2f6728",
+      "storage_kind": "direct",
+      "storage_name": "local_state"
+    },
+    {
+      "assignment_ast_kind": "direct-operator=",
+      "assignment_location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 11,
+        "offset": 315
+      },
+      "assignment_range": {
+        "begin_column": 5,
+        "begin_line": 11,
+        "begin_offset": 315,
+        "end_column": null,
+        "end_line": null,
+        "end_offset": 382,
+        "end_offset_exclusive": 383,
+        "end_token_length": null,
+        "file": "c-anonymous-enum-control/target.c"
+      },
+      "rewrite_safety": {
+        "parent_ast_kind": "CompoundStmt",
+        "standalone_statement": true
+      },
+      "state_type": "anonymous enum at c-anonymous-enum-control/target.c:2:5",
+      "storage_decl_id": "0x2b2f62a8",
+      "storage_kind": "direct",
+      "storage_name": "field_state"
+    }
+  ],
+  "clang": {
+    "arguments": [
+      "-std=gnu11"
+    ],
+    "ast_filter": null,
+    "executable": "auto",
+    "jobs": 1,
+    "version": "clang: Debian clang version 14.0.6; clang++: Debian clang version 14.0.6"
+  },
+  "enum_declarations": [
+    {
+      "declaration_kind": "anonymous EnumDecl",
+      "location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 2,
+        "offset": 23
+      },
+      "name": "anonymous enum at c-anonymous-enum-control/target.c:2:5"
+    },
+    {
+      "declaration_kind": "anonymous EnumDecl",
+      "location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 7,
+        "offset": 158
+      },
+      "name": "anonymous enum at c-anonymous-enum-control/target.c:7:5"
+    }
+  ],
+  "mode": "dry-run",
+  "parse_failures": [],
+  "schema": "sgfuzz-clang-ast-dry-run-v3",
+  "selection_mode": "automatic",
+  "source_root": "/home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/cases/c-anonymous-enum-control",
+  "state_storage": [
+    {
+      "canonical_type": "enum transport::(unnamed at c-anonymous-enum-control/target.c:2:5)",
+      "decl_id": "0x2b2f62a8",
+      "declaration_kind": "FieldDecl",
+      "location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 1,
+        "offset": 4
+      },
+      "name": "field_state",
+      "spelled_type": "enum (unnamed enum at c-anonymous-enum-control/target.c:2:5)",
+      "state_type": "anonymous enum at c-anonymous-enum-control/target.c:2:5",
+      "storage_kind": "direct"
+    },
+    {
+      "canonical_type": "enum (unnamed at c-anonymous-enum-control/target.c:7:5)",
+      "decl_id": "0x2b2f6728",
+      "declaration_kind": "VarDecl",
+      "location": {
+        "column": 5,
+        "file": "c-anonymous-enum-control/target.c",
+        "line": 7,
+        "offset": 158
+      },
+      "name": "local_state",
+      "spelled_type": "enum (unnamed enum at c-anonymous-enum-control/target.c:7:5)",
+      "state_type": "anonymous enum at c-anonymous-enum-control/target.c:7:5",
+      "storage_kind": "direct"
+    }
+  ],
+  "state_type": null,
+  "summary": {
+    "candidate_transition_writes": 2,
+    "enum_declarations": 2,
+    "parse_failures": 0,
+    "state_storage_declarations": 2,
+    "state_types_detected": 2,
+    "translation_units_parsed": 1,
+    "translation_units_requested": 1
+  },
+  "target_source_modified": false,
+  "translation_units": [
+    {
+      "analysis_command": [
+        "clang",
+        "-std=gnu11",
+        "-Xclang",
+        "-ast-dump",
+        "-fsyntax-only",
+        "c-anonymous-enum-control/target.c"
+      ],
+      "automatic_ast_format": "clang-text-ast",
+      "automatic_ast_passes": 1,
+      "elapsed_seconds": 0.02699,
+      "source": "c-anonymous-enum-control/target.c",
+      "status": "ok"
+    }
+  ]
+}

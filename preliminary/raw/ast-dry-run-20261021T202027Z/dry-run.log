@@ -1,0 +1,2 @@
+dry-run complete: 0 state-storage declaration(s), 0 candidate transition write(s), 0 parse failure(s)
+manifest: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/ast-dry-run-20261021T202027Z/manifest.json

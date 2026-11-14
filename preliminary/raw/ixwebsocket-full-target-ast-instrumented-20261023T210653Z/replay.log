@@ -1,0 +1,9 @@
+INFO: Seed: 2670113807
+INFO: Loaded 1 modules   (8437 inline 8-bit counters): 8437 [0x56516ef2d1c3, 0x56516ef2f2b8), 
+INFO: Loaded 1 PC tables (8437 PCs): 8437 [0x56516ef2f2b8,0x56516ef50208), 
+INFO:        4 files found in a3-sgfuzz-clang-ast/cases/ixwebsocket-transport/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 4 min: 2b max: 4b total: 13b rss: 31Mb
+#9	INITED cov: 86 ft: 103 corp: 4/13b exec/s: 0 rss: 31Mb states: 7 leaves: 2
+#9	DONE   cov: 86 ft: 103 corp: 4/13b lim: 4 exec/s: 0 rss: 31Mb states: 7 leaves: 2
+Done 9 runs in 0 second(s)

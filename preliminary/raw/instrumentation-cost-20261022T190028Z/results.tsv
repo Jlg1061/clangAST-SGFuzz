@@ -1,0 +1,7 @@
+mode	repetition	callback_sites	wall_ms
+regex	1	0	18
+ast	1	1	200
+regex	2	0	19
+ast	2	1	198
+regex	3	0	19
+ast	3	1	197

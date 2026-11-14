@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+"""Derive the historical prototype and full-target SGFuzz comparison table.
+
+The table intentionally keeps *callback sites* (a static instrumentation
+count) distinct from the SGFuzz runtime's ``states`` and ``leaves`` replay
+counts. The two full-target H2O runs are build/smoke checks, not a completed
+state-coverage experiment, so no STT count is invented for that row.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+import json
+import re
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RAW = ROOT / "raw"
+OUTPUTS = (ROOT / "derived" / "sgfuzz-vs-ast-comparison.md",)
+
+
+def text(relative: str) -> str:
+    return (ROOT / relative).read_text(encoding="utf-8")
+
+
+def metadata(relative: str) -> dict[str, str]:
+    return dict(line.split("=", 1) for line in text(relative).splitlines() if "=" in line)
+
+
+def stt(relative: str) -> str:
+    matches = re.findall(r"states: (\d+) leaves: (\d+)", text(relative))
+    if not matches:
+        raise ValueError(f"No STT line in {relative}")
+    states, leaves = matches[-1]
+    state_label = "state" if states == "1" else "states"
+    leaf_label = "leaf" if leaves == "1" else "leaves"
+    return f"{states} {state_label}, {leaves} {leaf_label}"
+
+
+def callback_from_metadata(relative: str) -> str:
+    return metadata(relative)["target_callback_sites"]
+
+
+def json_value(relative: str, key: str) -> object:
+    return json.loads(text(relative))[key]
+
+
+def main() -> None:
+    # These are deliberately pinned raw directories, not "latest" globbing.
+    # That makes the table repeatable when a later exploratory run is added.
+    direct = "raw/a2-comparison-line-direct-unscoped-control-20261022T182030Z"
+    scoped = "raw/a2-comparison-line-direct-scoped-variant-20261022T184453Z"
+    atomic = "raw/a2-comparison-line-atomic-unscoped-variant-20261022T184454Z"
+    primary_regex = "raw/a2-comparison-ixwebsocket-primary-20261022T184219Z/original"
+    primary_ast = "raw/auto-ixwebsocket-smoke-20261022T184751Z"
+    full_ix_regex = "raw/ixwebsocket-full-target-regex-20261023T210623Z"
+    full_ix_ast = "raw/ixwebsocket-full-target-ast-instrumented-20261023T210653Z"
+    full_h2o_regex = "raw/h2o-fuzzer-http2-full-regex-20261023T210923Z"
+    full_h2o_ast = "raw/h2o-instrumented-smoke-20261023T205114Z"
+
+    fixture_rows = []
+    for label, description, run in (
+        ("Direct unscoped enum", "Matched control: `ConnectionState state`.", direct),
+        ("Scoped enum", "Variant: `enum class ConnectionState`.", scoped),
+        ("Atomic enum", "Variant: `std::atomic<ConnectionState>`.", atomic),
+    ):
+        fixture_rows.append((
+            label,
+            description,
+            f"{callback_from_metadata(run + '/original/metadata.txt')}; {stt(run + '/original/replay.log')}",
+            f"{callback_from_metadata(run + '/ast/metadata.txt')}; {stt(run + '/ast/replay.log')}",
+            "Both builds and deterministic replays succeeded.",
+            f"`{run}/`",
+        ))
+
+    primary_ast_callbacks = json_value(primary_ast + "/instrumentation-summary.json", "callback_sites")
+    rows = fixture_rows + [
+        (
+            "IXWebSocket Transport (one TU)",
+            "Primary case: `std::atomic<ReadyState> _readyState`.",
+            f"{callback_from_metadata(primary_regex + '/metadata.txt')}; {stt(primary_regex + '/replay.log')}",
+            f"{primary_ast_callbacks}; {stt(primary_ast + '/replay.log')}",
+            "Both builds succeeded; regex missed `_readyState`, AST detected it.",
+            f"`{primary_regex}/`, `{primary_ast}/`",
+        ),
+        (
+            "IXWebSocket full CMake target",
+            "Default target: 36 C++ translation units, TLS off, Zlib on.",
+            f"{text(full_ix_regex + '/callback-sites.txt').strip()}; {stt(full_ix_regex + '/replay.log')}",
+            f"{json_value(full_ix_ast + '/instrumentation-summary.json', 'callback_sites')}; {stt(full_ix_ast + '/replay.log')}",
+            "Both default CMake targets and the same Transport harness built and replayed.",
+            f"`{full_ix_regex}/`, `{full_ix_ast}/`",
+        ),
+        (
+            "H2O `h2o-fuzzer-http2` full target",
+            "124 C-source CMake closure; original scanner had to scan whole checkout.",
+            f"{text(full_h2o_regex + '/callback-sites-closure.txt').strip()} in closure (1,022 checkout-wide); build **failed**; no replay",
+            f"{json_value(full_h2o_ast + '/instrumentation-manifest.json', 'callback_sites')} safe source callbacks (171 candidates; 22 skipped; 10 header-origin); fixed-input smoke **passed**",
+            "Regex injected a callback before a `struct h2o_http2_priority_t` assignment; AST build exit 0, fixed input exit 0, callback reached in GDB.",
+            f"`{full_h2o_regex}/`, `{full_h2o_ast}/`",
+        ),
+    ]
+    lines = [
+        "# SGFuzz regex scanner vs. Clang-AST prototype",
+        "",
+        "Generated by `preliminary/scripts/derive_prototype_comparison.py` from the pinned raw paths shown in the last column.",
+        "",
+        "**Reading the columns.** `callback sites` is a static count of inserted instrumentation calls. `states, leaves` is a runtime SGFuzz replay result. A leaf is a distinct root-to-leaf state-transition-tree path, not a callback count or a bug count. The deterministic replay values are comparable only within rows that use the same harness and four fixed seeds. The H2O `-runs=1` smoke intentionally executes one fixed input and does not report an STT total.",
+        "",
+        "| Scope / case | State representation or scope | Original SGFuzz: callbacks; replay | Clang-AST prototype: callbacks; replay | Build / smoke result | Raw evidence |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    lines.extend("| " + " | ".join(row) + " |" for row in rows)
+    lines += [
+        "",
+        "## Full-target scope and limitation",
+        "",
+        "The original scanner accepts only a directory and recursively scans every eligible file; it cannot be given H2O's 124-source CMake closure. Its H2O closure count is therefore measured *after* its whole-checkout scan, only over the copied files compiled by `h2o-fuzzer-http2`. The AST prototype was invoked with the exact 124 source paths listed in the CMake dependency evidence. This is a scope-control advantage, but it means 590 and 139 are not a semantic coverage ranking: they are static insertion counts produced by different selection policies.",
+        "",
+        "The H2O failure is concrete evidence of the regex scanner's type-insensitivity: `lib/http2/frame.c:219` assigns `h2o_http2_default_priority` (a struct value) to `payload->priority`, yet the name-based regex adds `__sfuzzer_instrument(..., h2o_http2_default_priority)`. The callback parameter is `unsigned int`, so Clang rejects the generated code. The AST instrumenter requires an AST-confirmed project enum storage location and therefore excludes this assignment.",
+        "",
+    ]
+    result = "\n".join(lines) + "\n"
+    for output in OUTPUTS:
+        output.write_text(result, encoding="utf-8")
+        print(f"Wrote {output}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,23 @@
+INFO: Seed: 2063459501
+INFO: Loaded 1 modules   (20511 inline 8-bit counters): 20511 [0x5616576d6954, 0x5616576db973), 
+INFO: Loaded 1 PC tables (20511 PCs): 20511 [0x5616576db978,0x56165772bb68), 
+/tmp/h2o-sgfuzz-ast-build-final-20261023T205114Z/h2o-fuzzer-http2: Running 1 inputs 1 time(s) each.
+Running: /tmp/h2o-sgfuzz-ast-instrumented-20261023T205114Z/fuzz/http2-corpus/011262c1c9966afaee07d3b0b5e89e42dc30b410
+==33== ERROR: libFuzzer: deadly signal
+    #0 0x561656e73111 in __sanitizer_print_stack_trace (/tmp/h2o-sgfuzz-ast-build-final-20261023T205114Z/h2o-fuzzer-http2+0x281111) (BuildId: de56f68109cd3e6c7b98ccb4f9c9b607d9771568)
+    #1 0x561656edb1f5 in fuzzer::PrintStackTrace() /home/kunaicito/Documents/759/SGFuzz/FuzzerUtil.cpp:210:5
+    #2 0x561656ebfa29 in fuzzer::Fuzzer::CrashCallback() /home/kunaicito/Documents/759/SGFuzz/FuzzerLoop.cpp:233:3
+    #3 0x7f577325a04f  (/lib/x86_64-linux-gnu/libc.so.6+0x3c04f) (BuildId: 6196744a316dbd57c0fd8968df1680aac482cec4)
+    #4 0x7f57732a8eeb in __pthread_kill_implementation nptl/./nptl/pthread_kill.c:43:17
+    #5 0x7f5773259fb1 in raise signal/../sysdeps/posix/raise.c:26:13
+    #6 0x7f5773244471 in abort stdlib/./stdlib/abort.c:79:7
+    #7 0x561656edc485 in upstream_thread(void*) /tmp/h2o-sgfuzz-ast-instrumented-20261023T205114Z/fuzz/driver.cc:177:9
+    #8 0x7f57732a71f4 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #9 0x7f57733278db in clone3 misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0x50,0x4f,0x53,0x54,0x20,0x2f,0x20,0x48,0x54,0x54,0x50,0x2f,0x31,0x2e,0x30,0xd,0xa,0x43,0x6f,0x6e,0x74,0x65,0x6e,0x74,0x2d,0x21,0x65,0x2e,0x30,0xd,0xa,0x43,0x6f,0x6e,0x74,0x65,0x6e,0x74,0x2d,0x21,0x65,0x6e,0x67,0x74,0x68,0x3a,0x20,0x78,0x79,0x7a,0xd,0xa,0x65,0xa,0x6e,0x67,0x74,0x68,0x3a,0x20,0x78,0x79,0x7a,0xd,0xa,0x65,0xa,
+POST / HTTP/1.0\x0d\x0aContent-!e.0\x0d\x0aContent-!ength: xyz\x0d\x0ae\x0angth: xyz\x0d\x0ae\x0a

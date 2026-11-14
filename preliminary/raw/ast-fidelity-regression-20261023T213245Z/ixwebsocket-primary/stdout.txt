@@ -1,0 +1,2 @@
+dry-run complete: 8 state-storage declaration(s), 5 candidate transition write(s), 0 parse failure(s)
+manifest: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/ast-fidelity-regression-20261023T213245Z/ixwebsocket-primary/manifest.json

@@ -1,0 +1,2 @@
+instrumented 5 callback site(s) in copied source: /home/kunaicito/Documents/759/A3_sgfuzz_clang_ast_submission/runs/auto-ixwebsocket-smoke-20261103T194149Z/repo
+manifest: /home/kunaicito/Documents/759/A3_sgfuzz_clang_ast_submission/raw/auto-ixwebsocket-smoke-20261103T194149Z/instrumentation-manifest.json

@@ -1,0 +1,11 @@
+{
+  "selection_mode": "automatic",
+  "callback_sites": 15,
+  "skipped_candidates": 0,
+  "input_source_modified": false,
+  "instrumented_files": [
+    "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXSocket.cpp",
+    "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXUrlParser.cpp",
+    "/tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/ixwebsocket/IXWebSocketTransport.cpp"
+  ]
+}

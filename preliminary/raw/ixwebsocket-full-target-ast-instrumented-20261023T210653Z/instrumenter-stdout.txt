@@ -1,0 +1,2 @@
+instrumented 15 callback site(s) in copied source: /tmp/ixwebsocket-full-target-ast-instrumented-20261023T210653Z
+manifest: /home/kunaicito/Documents/759/a3-sgfuzz-clang-ast/raw/ixwebsocket-full-target-ast-instrumented-20261023T210653Z/instrumentation-manifest.json
