@@ -1,0 +1,46 @@
+{
+  "conditions": [
+    {
+      "build_returncode": 0,
+      "expected": {
+        "callback_sites": 0,
+        "leaves": 1,
+        "states": 1
+      },
+      "id": "control",
+      "observed": {
+        "callback_sites": 0,
+        "leaves": 1,
+        "states": 1
+      },
+      "output_source_sha256": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+      "raw_directory": "raw/stage-a-feasibility-20261115T100000Z/control",
+      "replay_returncode": 0,
+      "status": "ok"
+    },
+    {
+      "expected": {
+        "callback_sites": 5,
+        "leaves": 2,
+        "states": 7
+      },
+      "id": "ast",
+      "instrument_returncode": 2,
+      "raw_directory": "raw/stage-a-feasibility-20261115T100000Z/ast",
+      "status": "instrument-failed"
+    }
+  ],
+  "input_source_sha256_after": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "input_source_sha256_before": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "input_source_unchanged": true,
+  "plan": "experiments/stage-a-feasibility.json",
+  "runtime_commit": "35f1ffc9482d524b03e54c7a48f4a742ba9fc9a3",
+  "runtime_status_short": [
+    " M FuzzerStateMachine.h",
+    " M build.sh",
+    "?? environment/"
+  ],
+  "schema": "clangast-sgfuzz-stage-a-feasibility-index-v1",
+  "target_commit": "514a0b968503d758a2954ff9016289f41f489616",
+  "target_source_modified": false
+}

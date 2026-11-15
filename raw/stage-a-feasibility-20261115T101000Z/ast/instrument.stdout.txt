@@ -1,0 +1,2 @@
+instrumented 5 callback site(s) in copied source: /home/kunaicito/Documents/759/clangAST-SGFuzz/runs/stage-a-feasibility-20261115T101000Z/ast/repo
+manifest: /home/kunaicito/Documents/759/clangAST-SGFuzz/raw/stage-a-feasibility-20261115T101000Z/ast/instrumentation-manifest.json

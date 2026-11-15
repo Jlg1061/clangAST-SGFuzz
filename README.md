@@ -115,6 +115,25 @@ commands, and manifests. These counts are a static candidate inventory, not a
 claim about semantic state-variable precision, instrumentation buildability,
 fuzzing speed, STT coverage, or bugs.
 
+## Stage A — feasibility pilot
+
+Stage A tests the full AST path on the primary real target: copy one clean
+IXWebSocket checkout, instrument only `IXWebSocketTransport.cpp`, compile the
+same 36-unit library source list and transport harness as a clean copied-source
+control, then replay four fixed inputs with `-runs=0`.
+
+```bash
+python3 scripts/run_stage_a_feasibility.py --label $(date -u +%Y%m%dT%H%M%SZ)
+```
+
+It typically takes a few minutes because each sanitizer build compiles all 36
+library units. The completed reference run is
+`derived/stage-a-feasibility-20261115T101000Z.md`: the control reports 0
+callbacks and a root-only STT, while the AST copy reports 5 inserted callbacks,
+7 STT nodes, and 2 leaves. This confirms an end-to-end build and runtime
+connection; it is not a randomized fuzzing-performance result, and the
+`setReadyState` harness does not claim to execute all five sites.
+
 ## Baseline and attribution
 
 The baseline source instrumenter remains the upstream SGFuzz script at the

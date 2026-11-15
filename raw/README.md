@@ -30,3 +30,11 @@ also retains the fresh out-of-tree CMake configuration and the exact
 `real-project-static-audit-20261114T170000Z/` is the intentionally retained
 superseded attempt. `RUN_STOPPED.md` records the diagnosis of the analyzer's
 stderr-pipe capture stall. It is setup evidence only, not a result.
+
+The completed Stage A feasibility pilot is
+`stage-a-feasibility-20261115T101000Z/`. Its index connects the pre-registered
+inputs and expected tuples to the control and AST copied-source build/replay
+logs; the derived table is
+`../derived/stage-a-feasibility-20261115T101000Z.md`. The preceding
+`stage-a-feasibility-20261115T100000Z/` directory is retained setup evidence;
+its `RUN_SUPERSEDED.md` explains the safely rejected output-directory mistake.

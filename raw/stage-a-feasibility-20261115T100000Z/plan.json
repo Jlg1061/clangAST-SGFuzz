@@ -1,0 +1,64 @@
+{
+  "schema": "clangast-sgfuzz-stage-a-feasibility-v1",
+  "recorded_before_execution": "2026-11-15",
+  "purpose": "Stage A feasibility pilot. On one pinned real C++ target, verify the end-to-end path from copy-only automatic AST instrumentation through sanitizer build and deterministic SGFuzz replay. This is a mechanism and buildability check, not a randomized fuzzing-performance experiment.",
+  "target": {
+    "project": "IXWebSocket",
+    "checkout": "../IXWebSocket",
+    "expected_commit": "514a0b968503d758a2954ff9016289f41f489616",
+    "source": "ixwebsocket/IXWebSocketTransport.cpp",
+    "source_list": "experiments/ixwebsocket-default-library-sources.txt",
+    "source_list_sha256": "41c6736a8a5fe0831ad6eb7570350b120915f7b5e7ac69b580bd7e69550ff56a",
+    "harness": "cases/ixwebsocket-transport/fuzz_state_sequence.cpp",
+    "harness_sha256": "0bd7227943eb0956e3ed1f3d3d19c043d1f3be8ba960be9efd92cadf0c4ad47a",
+    "seed_directory": "cases/ixwebsocket-transport/seeds",
+    "seed_sha256": {
+      "connecting-open-close.txt": "c9dae56f53343d414490fd9c02953e3faf2f66e2c433616bfa577b2a17399c55",
+      "open-close.txt": "a908a58632e0164b7ecd54cebd8623f1ef93e5989f0ac0280b31f0ff21382486",
+      "open-closing.txt": "2b7953d76bb1995c48959b8505e1098dc6218f462650b0f6928018c94c2b4f5c",
+      "open.txt": "19352677df76e156581cbb0133228534d9834664224a9c7d1fd912939d4c21a3"
+    }
+  },
+  "runtime": {
+    "sgfuzz_checkout": "../SGFuzz",
+    "expected_commit": "35f1ffc9482d524b03e54c7a48f4a742ba9fc9a3",
+    "library": "libsfuzzer.a",
+    "library_sha256": "783e83c4102e0490f4ee828c40041f01a2018f9f6d9ead14b6c963dd4ab50559",
+    "compiler": "clang++",
+    "compiler_arguments": [
+      "-std=c++14",
+      "-g",
+      "-O1",
+      "-fno-omit-frame-pointer",
+      "-fsanitize=address,undefined,fuzzer-no-link",
+      "-DIXWEBSOCKET_USE_ZLIB"
+    ],
+    "replay_arguments": [
+      "-runs=0"
+    ],
+    "environment": {
+      "ASAN_OPTIONS": "detect_leaks=0"
+    }
+  },
+  "conditions": [
+    {
+      "id": "control",
+      "description": "A clean copied IXWebSocket source tree, built and replayed without instrumentation.",
+      "expected": {
+        "callback_sites": 0,
+        "states": 1,
+        "leaves": 1
+      }
+    },
+    {
+      "id": "ast",
+      "description": "The same copied source tree, with automatic AST instrumentation limited to IXWebSocketTransport.cpp.",
+      "expected": {
+        "callback_sites": 5,
+        "states": 7,
+        "leaves": 2
+      }
+    }
+  ],
+  "interpretation_rule": "Pass requires both sanitizer builds and deterministic replays to exit successfully, the upstream source checksum to remain unchanged, and each observed callback/STT tuple to equal its pre-recorded value. STT states include the root; leaves are distinct root-to-leaf transition sequences. The results do not measure executions per second, code coverage, bug discovery, or randomized-fuzzing effectiveness."
+}

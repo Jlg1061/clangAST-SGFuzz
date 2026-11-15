@@ -1,0 +1,45 @@
+{
+  "all_pre_registered_outcomes_matched": true,
+  "conditions": [
+    {
+      "build_returncode": 0,
+      "expected": {
+        "callback_sites": 0,
+        "leaves": 1,
+        "states": 1
+      },
+      "id": "control",
+      "observed": {
+        "callback_sites": 0,
+        "leaves": 1,
+        "states": 1
+      },
+      "output_source_sha256": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+      "raw_directory": "raw/stage-a-feasibility-20261115T101000Z/control",
+      "replay_returncode": 0,
+      "status": "ok"
+    },
+    {
+      "build_returncode": 0,
+      "expected": {
+        "callback_sites": 5,
+        "leaves": 2,
+        "states": 7
+      },
+      "id": "ast",
+      "instrument_returncode": 0,
+      "observed": {
+        "callback_sites": 5,
+        "leaves": 2,
+        "states": 7
+      },
+      "output_source_sha256": "e6d864b60004be487cb7901b8c896e97171adb0767511ef069965e67b192798b",
+      "raw_directory": "raw/stage-a-feasibility-20261115T101000Z/ast",
+      "replay_returncode": 0,
+      "status": "ok"
+    }
+  ],
+  "experiment_index": "raw/stage-a-feasibility-20261115T101000Z/index.json",
+  "interpretation": "This is an end-to-end copy-instrument-build-replay feasibility check with a fixed corpus and -runs=0. It is not a randomized fuzzing-performance comparison.",
+  "schema": "clangast-sgfuzz-stage-a-feasibility-result-v1"
+}

@@ -41,3 +41,16 @@ safe target-external fix, and superseded raw directory are documented in
 `raw/real-project-static-audit-20261114T170000Z/RUN_STOPPED.md`. The static
 counts are explicitly interpreted only as candidate-discovery and parse-
 coverage evidence, not as fuzzing effectiveness or semantic ground truth.
+
+## Final-project Stage A feasibility pilot
+
+Codex helped create the pre-registered Stage A plan and its copied-source
+runner/derivation scripts. The authors verified the scripts with Python
+compilation and the completed fresh run at
+`raw/stage-a-feasibility-20261115T101000Z/index.json`. The control and AST
+conditions used the same frozen 36-unit source list, harness, seeds, sanitizer
+flags, runtime archive, and deterministic `-runs=0` budget. A pre-run output-
+directory setup mistake was retained in the superseded
+`raw/stage-a-feasibility-20261115T100000Z/` directory; the corrected run did
+not alter the pinned IXWebSocket source. The result is only an end-to-end
+feasibility check, not an AI-derived claim of fuzzing effectiveness.

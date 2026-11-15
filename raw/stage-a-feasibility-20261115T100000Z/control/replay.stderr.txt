@@ -1,0 +1,9 @@
+INFO: Seed: 1223231493
+INFO: Loaded 1 modules   (14528 inline 8-bit counters): 14528 [0x561766104fa3, 0x561766108863), 
+INFO: Loaded 1 PC tables (14528 PCs): 14528 [0x561766108868,0x561766141468), 
+INFO:        4 files found in /home/kunaicito/Documents/759/clangAST-SGFuzz/cases/ixwebsocket-transport/seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 4 min: 2b max: 4b total: 13b rss: 36Mb
+#5	INITED cov: 86 ft: 101 corp: 4/13b exec/s: 0 rss: 36Mb states: 1 leaves: 1
+#5	DONE   cov: 86 ft: 101 corp: 4/13b lim: 4 exec/s: 0 rss: 36Mb states: 1 leaves: 1
+Done 5 runs in 0 second(s)
