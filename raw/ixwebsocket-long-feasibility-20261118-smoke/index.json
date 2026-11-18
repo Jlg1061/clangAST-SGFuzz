@@ -1,0 +1,39 @@
+{
+  "callback_sites": 5,
+  "completed_utc": "2026-11-18T15:07:09.230717+00:00",
+  "duration_seconds": 60,
+  "elapsed_seconds": 65.007,
+  "final_corpus": {
+    "bytes": 33853,
+    "files": 2649
+  },
+  "final_stt": {
+    "leaves": 1026,
+    "states": 2983
+  },
+  "fuzz_returncode": 0,
+  "input_source_sha256_after": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "input_source_sha256_before": "7533d8d16edbaaed5cffb4ccf11c57331321cf08206ad6171cbe7274b1c8ca59",
+  "input_source_unchanged": true,
+  "peak_rss_mb": 476,
+  "plan": "experiments/ixwebsocket-long-feasibility.json",
+  "process_id": 56,
+  "raw_directory": "raw/ixwebsocket-long-feasibility-20261118-smoke",
+  "run_directory": "runs/ixwebsocket-long-feasibility-20261118-smoke",
+  "runtime_git": {
+    "commit": "35f1ffc9482d524b03e54c7a48f4a742ba9fc9a3",
+    "status_short": [
+      " M FuzzerStateMachine.h",
+      " M build.sh",
+      "?? environment/"
+    ]
+  },
+  "sanitizer_error": false,
+  "schema": "clangast-sgfuzz-ixwebsocket-long-feasibility-index-v1",
+  "started_utc": "2026-11-18T15:05:29.450737+00:00",
+  "status": "completed",
+  "target_git": {
+    "commit": "514a0b968503d758a2954ff9016289f41f489616",
+    "status_short": []
+  }
+}

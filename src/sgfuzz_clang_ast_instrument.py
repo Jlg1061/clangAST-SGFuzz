@@ -24,7 +24,11 @@ from typing import Any
 
 
 PROJECT = Path(__file__).resolve().parents[1]
-DETECTOR = PROJECT / "src" / "sgfuzz_clang_ast_dry_run.py"
+# In a source checkout the detector lives in PROJECT/src. FuzzBench packages
+# both scripts side-by-side in /opt, so prefer that colocated copy when it is
+# present instead of assuming the checkout layout at build time.
+_LOCAL_DETECTOR = Path(__file__).resolve().with_name("sgfuzz_clang_ast_dry_run.py")
+DETECTOR = _LOCAL_DETECTOR if _LOCAL_DETECTOR.is_file() else PROJECT / "src" / "sgfuzz_clang_ast_dry_run.py"
 SCHEMA = "sgfuzz-clang-ast-instrument-v3"
 TRACKED_SOURCE_SUFFIXES = {".c", ".cc", ".cpp", ".cxx", ".h", ".hh", ".hpp", ".hxx"}
 CALLBACK_PREAMBLE = """#ifndef SFUZZ_INSTRUMENT
@@ -60,6 +64,10 @@ def parse_arguments() -> argparse.Namespace:
                         help="Clang executable. Default 'auto' selects clang for .c and clang++ for C++ sources.")
     parser.add_argument("--clang-arg", action="append", default=[],
                         help="Extra compiler argument. Include paths must point at --output-root.")
+    parser.add_argument("--compile-commands", type=Path,
+                        help="Optional compile_commands.json inside --input-root. Its paths are "
+                             "rebased to the copied tree before AST discovery so the copied "
+                             "source is analysed with the target's recorded build flags.")
     parser.add_argument("--ast-filter")
     parser.add_argument("--jobs", type=int, default=1,
                         help="Concurrent AST analyses in automatic discovery mode (default: 1).")
@@ -90,6 +98,47 @@ def tracked_sources(input_root: Path, source_root_relative: Path,
                   if path.is_file() and path.suffix in TRACKED_SOURCE_SUFFIXES)
 
 
+def rebase_compilation_database(input_database: Path, input_root: Path,
+                                output_root: Path, temporary_dir: Path) -> Path:
+    """Copy a CMake compilation database with absolute paths rebased to output.
+
+    The detector deliberately analyses the copied tree, because only that tree
+    may later be rewritten.  CMake records absolute source, include, and
+    working-directory paths, however.  Passing the original database unchanged
+    would make Clang parse the original checkout instead.  Replacing the known
+    input-root prefix in every string field preserves CMake's exact compiler
+    arguments while pointing those arguments at the disposable copy.
+    """
+    try:
+        entries = json.loads(input_database.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError(f"Cannot read compilation database {input_database}: {error}") from error
+    if not isinstance(entries, list):
+        raise ValueError(f"Compilation database {input_database} must contain a JSON list.")
+
+    input_prefix = str(input_root.resolve())
+    output_prefix = str(output_root.resolve())
+
+    def rebase(value: Any) -> Any:
+        if isinstance(value, str):
+            return value.replace(input_prefix, output_prefix)
+        if isinstance(value, list):
+            return [rebase(item) for item in value]
+        if isinstance(value, dict):
+            return {key: rebase(item) for key, item in value.items()}
+        return value
+
+    rebased_path = temporary_dir / "compile_commands.rebased.json"
+    rebased_path.write_text(json.dumps(rebase(entries), indent=2) + "\n", encoding="utf-8")
+    return rebased_path
+
+
+def compilation_database_path(value: Path, input_root: Path) -> Path:
+    """Resolve a database path using the same input-root rule as --source."""
+    relative = ensure_relative(value, input_root, "--compile-commands")
+    return input_root / relative
+
+
 def run_detector(arguments: argparse.Namespace, analysis_root: Path, output_root: Path,
                  source_relatives: list[Path], temporary_dir: Path) -> dict[str, Any]:
     discovery_path = temporary_dir / "discovery.json"
@@ -106,6 +155,14 @@ def run_detector(arguments: argparse.Namespace, analysis_root: Path, output_root
         command.extend(["--source", str(output_root / source_relative)])
     for clang_arg in arguments.clang_arg:
         command.append(f"--clang-arg={clang_arg}")
+    if arguments.compile_commands is not None:
+        input_database = compilation_database_path(arguments.compile_commands,
+                                                   arguments.input_root.resolve())
+        if not input_database.is_file():
+            raise ValueError(f"Compilation database does not exist: {input_database}")
+        rebased_database = rebase_compilation_database(input_database, arguments.input_root.resolve(),
+                                                       output_root, temporary_dir)
+        command.extend(["--compile-commands", str(rebased_database)])
     if arguments.ast_filter:
         command.extend(["--ast-filter", arguments.ast_filter])
     result = subprocess.run(command, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -349,6 +406,8 @@ def main() -> int:
             "input_source_sha256_after": input_hashes_after,
             "state_type": arguments.state_type,
             "selection_mode": "focused" if arguments.state_type else "automatic",
+            "compile_commands": (str(compilation_database_path(arguments.compile_commands, input_root))
+                                  if arguments.compile_commands is not None else None),
             "discovery": discovery,
             "instrumented_files": instrumented_files,
             "callback_sites": sum(len(record["callback_sites"]) for record in instrumented_files),

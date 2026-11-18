@@ -27,7 +27,7 @@ fuzzing results. Final experiments will write new, timestamped evidence under
 - `scripts/` — repeatable checks, deterministic replays, and result derivation.
 - `experiments/` — pre-registered configurations and expected control outcomes.
 - `environment/` — frozen upstream revisions and recorded toolchain details.
-- `raw/` — retained raw output from final-project runs; initially empty.
+- `raw/` — retained raw output from final-project runs.
 - `preliminary/` — curated historical evidence, notes, and derived table.
 - `notes/` — current attribution and AI-use disclosure.
 
@@ -133,6 +133,31 @@ callbacks and a root-only STT, while the AST copy reports 5 inserted callbacks,
 7 STT nodes, and 2 leaves. This confirms an end-to-end build and runtime
 connection; it is not a randomized fuzzing-performance result, and the
 `setReadyState` harness does not claim to execute all five sites.
+
+## Sustained IXWebSocket feasibility campaign
+
+The final operational campaign uses the same pinned IXWebSocket transport
+harness, source list, sanitizer build, SGFuzz runtime, and AST-copy workflow,
+but fuzzes for 23 hours with a fixed LibFuzzer seed. It is deliberately one
+AST-SGFuzz trial: it checks that the new selection mechanism remains usable
+over a sustained run, not whether it outperforms the regex baseline or fuzzes
+the whole IXWebSocket library.
+
+```bash
+python3 scripts/run_ixwebsocket_long_feasibility.py \
+  --label $(date -u +%Y%m%dT%H%M%SZ)
+```
+
+Expect about 23 hours plus the initial sanitizer build and one CPU core. The
+runner writes the frozen plan, source checksums, copied-source diff, exact
+commands, compiler log, LibFuzzer log, and 15-minute, one-hour, and final
+checkpoints to `raw/ixwebsocket-long-feasibility-<label>/`; disposable copied
+sources and the evolving corpus stay under ignored `runs/`. For a 60-second
+operational preflight, add `--duration-seconds 60`. The retained preflight at
+`raw/ixwebsocket-long-feasibility-20261118-smoke/index.json` completed with
+five callback sites, unchanged input source, no sanitizer error, and a
+non-root STT. It establishes launch readiness only; it is not the 23-hour
+result.
 
 ## Baseline and attribution
 

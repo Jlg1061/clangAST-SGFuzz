@@ -18,6 +18,14 @@ file, or calculation. Future final-project experiments will record their
 commands and raw output under `raw/` and update this disclosure if material
 AI assistance is used.
 
+## Team contributions
+
+Jose Luis Gonzalez Paniagua implemented and verified the AST detector,
+copy-only instrumenter, regression and real-project runners, and their raw
+evidence. Will D'Andrade developed the project framing and evaluation idea,
+wrote and integrated the report, and reviewed the experimental interpretation
+and deliverable. Both authors reviewed the final source and evidence.
+
 ## Final-project regression controls
 
 Codex helped add the C replay harness, pre-registered control plan, runner,
@@ -54,3 +62,14 @@ directory setup mistake was retained in the superseded
 `raw/stage-a-feasibility-20261115T100000Z/` directory; the corrected run did
 not alter the pinned IXWebSocket source. The result is only an end-to-end
 feasibility check, not an AI-derived claim of fuzzing effectiveness.
+
+## Sustained IXWebSocket feasibility campaign
+
+Codex helped add the pre-registered 23-hour campaign plan and the runner that
+records source integrity, commands, build output, LibFuzzer output, resource
+checkpoints, and final STT counts. The authors verified the runner with Python
+compilation, a completed 60-second sanitizer preflight at
+`raw/ixwebsocket-long-feasibility-20261118-smoke/index.json`, and review of
+its raw logs. The full campaign is retained as raw evidence only after it
+completes; it is a sustained operational-feasibility check, not a performance
+or bug-finding comparison.
