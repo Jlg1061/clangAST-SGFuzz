@@ -1,0 +1,329 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xurl}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\urlstyle{same}
+
+\begin{document}
+
+\title{Improving SGFuzz State Instrumentation Using Clang AST Analysis}
+
+\author{
+\IEEEauthorblockN{Will D'Andrade}
+\IEEEauthorblockA{Department of Cybersecurity\\
+Rochester Institute of Technology\\
+Rochester, New York, USA}
+\and
+\IEEEauthorblockN{Jose Luis Gonzalez Paniagua}
+\IEEEauthorblockA{Department of Cybersecurity\\
+Rochester Institute of Technology\\
+Rochester, New York, USA}
+}
+\maketitle
+
+\begin{abstract}
+SGFuzz obtains stateful feedback by instrumenting assignments to state-related
+enum variables. Its source pass uses regular expressions, which can miss modern
+C++ representations and select unrelated assignments. We replace only this
+selection step with a Clang abstract syntax tree (AST) analysis while retaining
+the original SGFuzz callback and State Transition Tree (STT) runtime. The
+prototype identifies project enum storage, resolves assignment targets to their
+declarations, and rewrites accepted standalone assignments in a copied source
+tree. In IXWebSocket, the regex selector placed zero callbacks at the target
+atomic enum field; the AST selector placed five. With the same 36-unit build,
+fixed corpus, and deterministic replay, the AST condition produced seven STT
+nodes and two leaves, versus the control's root-only one node and one leaf.
+Five pre-registered C and C++ regression controls passed, and static audits
+parsed all 36 selected IXWebSocket C++ units and all 124 selected H2O C units
+without failures. A completed 60-second sanitizer preflight sustained the
+instrumented IXWebSocket harness at about 96k executions per second with no
+sanitizer finding. These results support improved source-selection fidelity and
+end-to-end feasibility; they do not establish superior fuzzing throughput,
+coverage, or bug discovery.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Stateful Greybox Fuzzing, SGFuzz, Clang, Abstract Syntax Tree, Source
+Instrumentation, Software Testing
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Coverage-guided fuzzers use observations from prior executions to retain and
+mutate inputs. For stateful programs, code coverage alone may not distinguish
+executions that reach different protocol states through similar control flow.
+SGFuzz addresses this problem by observing assignments to variables that
+represent states and by storing the observed transition sequences in a State
+Transition Tree (STT)~\cite{ba2022}.
+
+The usefulness of this feedback depends on selecting the right source
+statements. The original SGFuzz source pass searches text with regular
+expressions. Text alone does not reliably identify the declared type or target
+of an assignment. In particular, a scoped enum or \texttt{std::atomic<Enum>}
+field can evade a text pattern, while an unrelated assignment with a similar
+shape can be selected incorrectly. A missed write prevents the runtime from
+observing a state transition; an incorrect rewrite can prevent a target from
+building.
+
+This paper evaluates a narrow replacement for the selection step. The prototype
+uses Clang's AST to associate an assignment left-hand side with a declaration
+and type, then emits the existing SGFuzz callback only for supported writes to
+project-owned enum storage. It neither replaces SGFuzz's runtime nor claims to
+infer the semantic importance of every enum. Our question is whether typed AST
+analysis improves instrumentation fidelity without regressing cases that the
+regex selector already handles.
+
+\section{Background and Design}
+
+\subsection{SGFuzz feedback}
+
+SGFuzz inserts \texttt{\_\_sfuzzer\_instrument(location, value)} at selected
+writes. The unchanged runtime receives those events and builds an STT. An STT
+node count includes the root. A leaf is a distinct root-to-leaf transition
+sequence, not an individual enum value, code edge, state declaration, or bug.
+Thus, a root-only result of one node and one leaf means that no instrumented
+state transition was observed by that execution.
+
+The baseline paper reports stateful fuzzing results across protocol
+implementations~\cite{ba2022}. This work does not repeat those performance or
+bug-discovery claims. It isolates the earlier source-selection stage that
+determines which state events reach the same callback ABI and runtime.
+
+\subsection{AST-aware source selection}
+
+The implementation has a detector and a copy-only instrumenter. The detector
+invokes Clang with a textual AST dump for selected C or C++ translation units.
+It records project enum declarations, then records \texttt{VarDecl} and
+\texttt{FieldDecl} storage whose canonical type is a project enum or
+\texttt{std::atomic<Enum>}. An assignment is a candidate only if its left-hand
+side resolves through \texttt{DeclRefExpr} or \texttt{MemberExpr} to that
+recorded declaration. This declaration linkage avoids choosing a write merely
+because it contains a familiar spelling.
+
+The instrumenter accepts only supported standalone writes. It captures the
+right-hand expression once, performs the original assignment once, then calls
+the unmodified SGFuzz callback with the captured value. Rewriting happens in a
+disposable copied tree; the upstream checkout is never edited. The current
+implementation supports direct and selected overloaded C++ assignments,
+including the IXWebSocket \texttt{std::atomic<ReadyState>} field
+\texttt{\_readyState}. It also distinguishes anonymous C enums using resolved
+source coordinates.
+
+\section{Methodology}
+
+\subsection{Pinned inputs and evidence}
+
+The experiments use SGFuzz commit \texttt{35f1ffc9} and its unchanged
+\texttt{libsfuzzer.a} runtime. IXWebSocket is pinned at \texttt{514a0b96};
+H2O is pinned at \texttt{1e7344932}. The full revision identifiers and the
+recorded environment
+uses Debian Clang 14.0.6, Python 3.11.2, and sanitizer-enabled C++14 builds.
+The source, plans, commands, manifests, logs, and derived tables are retained
+in the accompanying repository~\cite{artifact}.
+
+\subsection{Regression controls}
+
+Five pre-registered controls compare the regex and AST selectors using fixed
+seed inputs and \texttt{-runs=0}: a direct unscoped C++ enum, a scoped C++
+enum, an atomic enum, a direct C enum, and an anonymous C enum. The first and
+fourth are preservation controls; the remaining cases test forms that the
+regex selector misses. For each condition we record callback sites, STT nodes,
+and leaves. The expected outputs were fixed before execution in
+\texttt{experiments/regression-controls.json}.
+
+\subsection{Real-project checks}
+
+The primary real target is IXWebSocket's transport implementation. For the
+deterministic feasibility pilot, control and AST builds compile the same frozen
+36-unit default-library source list, fixed four-input corpus, sanitizer flags,
+and SGFuzz runtime. The sole difference is that the AST condition rewrites a
+copied \texttt{IXWebSocketTransport.cpp}. Both execute a deterministic
+\texttt{-runs=0} replay.
+
+A separate static audit measures parser and candidate-discovery coverage, not
+fuzzing effectiveness. It parses 36 IXWebSocket C++ units with recorded
+library flags and 124 H2O C units from the \texttt{h2o-fuzzer-http2} build
+closure with a fresh CMake compilation database. A candidate write is an AST
+assignment whose lvalue resolves to selected enum storage. It is not assumed to
+be a semantic protocol state or a build-validated rewrite site.
+
+Finally, we ran a 60-second operational preflight on the AST-instrumented
+IXWebSocket transport harness using a fixed libFuzzer seed, address and
+undefined-behavior sanitizers, and a 25-second per-input timeout. It records
+source integrity, callback count, final STT, libFuzzer counters, corpus size,
+and peak resident memory. This short campaign demonstrates that the full path
+can run continuously; it is not a comparison against regex SGFuzz.
+
+\section{Results}
+
+\subsection{Regression controls and deterministic replay}
+
+Table~\ref{tab:controls} reports the completed pre-registered controls. All
+five passed. The direct unscoped C++ and direct C controls preserved the
+baseline behavior. The AST selector recovered the scoped, atomic, and
+anonymous-C cases that remained root-only under regex selection.
+
+\begin{table}[t]
+\centering
+\caption{Pre-registered regression controls. Entries are callback sites / STT
+nodes / leaves; node counts include the root.}
+\label{tab:controls}
+\footnotesize
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{@{}p{0.43\columnwidth}cc@{}}
+\toprule
+\textbf{Case} & \textbf{Regex} & \textbf{AST} \\
+\midrule
+Direct unscoped C++ control & 1 / 4 / 1 & 1 / 4 / 1 \\
+Scoped C++ enum & 0 / 1 / 1 & 1 / 4 / 1 \\
+Atomic C++ enum & 0 / 1 / 1 & 1 / 4 / 1 \\
+Direct C enum control & 1 / 5 / 1 & 1 / 5 / 1 \\
+Anonymous C enum & 0 / 1 / 1 & 2 / 3 / 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The same pattern appears in the primary real target (Table~\ref{tab:ix}).
+The regex control placed no callback in the target transport file and its
+replay remained root-only. The AST condition placed five callbacks, built the
+same 36-unit source scope, and produced seven nodes and two leaves under the
+same four-input deterministic replay. This confirms that at least one selected
+site resolves to and executes through the original SGFuzz runtime. It does not
+show that all five sites execute, nor does it establish higher coverage,
+throughput, or bug discovery.
+
+\begin{table}[t]
+\centering
+\caption{IXWebSocket deterministic feasibility pilot. Both conditions use the
+same 36-unit build, corpus, sanitizer flags, runtime, and \texttt{-runs=0}.}
+\label{tab:ix}
+\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Condition} & \textbf{Callbacks} & \textbf{Nodes} & \textbf{Leaves} & \textbf{Build/replay} \\
+\midrule
+Control & 0 & 1 & 1 & Pass \\
+AST & 5 & 7 & 2 & Pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Static audit}
+
+Table~\ref{tab:audit} reports the static-audit inventory. Every frozen
+translation unit parsed successfully. The candidate and storage counts make
+the selection scope auditable, but they are not precision labels and should
+not be read as a count of true protocol states or inserted callbacks. The H2O
+scan additionally shows that the analyzer can preserve per-unit CMake
+arguments for a real C target rather than relying on a single guessed command.
+
+\begin{table}[t]
+\centering
+\caption{Real-project AST static audit. Candidate writes are type-resolved
+assignment candidates, not semantic state labels.}
+\label{tab:audit}
+\footnotesize
+\setlength{\tabcolsep}{2.3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{Scope} & \textbf{TU} & \textbf{Fail.} & \textbf{Enums} & \textbf{Storage} & \textbf{Writes} \\
+\midrule
+IXWebSocket C++ & 36/36 & 0 & 18 & 17 & 17 \\
+H2O C & 124/124 & 0 & 98 & 73 & 171 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Short operational preflight}
+
+The completed 60-second AST campaign returned zero, reported no AddressSanitizer
+or UndefinedBehaviorSanitizer finding, and preserved the IXWebSocket source
+SHA-256 before and after instrumentation. It inserted five callbacks and
+finished with 2,983 STT nodes and 1,026 distinct leaves. LibFuzzer reported
+\texttt{cov: 88} and \texttt{ft: 278}; these counters describe only this small
+transport harness. The run executed 6,258,463 inputs in 65.007 seconds
+(approximately 96k executions per second over measured elapsed time), produced
+2,649 corpus files totaling 33,853 bytes, and recorded 476 MB peak RSS.
+
+This result is operational evidence, not a randomized performance comparison.
+The 23-hour single-trial plan records the same metrics at 15 minutes, one hour,
+and completion; it is not treated as a result here because it had not completed
+when this paper was prepared.
+
+\subsection{Instrumentation cost and limitations}
+
+In a separate three-repetition atomic-fixture check, median copy-and-instrument
+time was 19 ms for regex and 198 ms for the AST version, a 10.4$\times$
+preprocessing increase. This is not fuzzing throughput: it measures a small
+one-time source preprocessing task before a campaign begins. It provides no
+basis for claiming a tenfold decrease in executions per second or a target-scale
+scalability result.
+
+The AST rule is type-aware, not semantically omniscient. Some selected enum
+storage can be irrelevant to useful protocol state, so over-selection may
+increase callback and STT bookkeeping without improving feedback quality. The
+prototype also conservatively excludes type aliases, macros, header-only
+writes, atomic \texttt{.store()} calls, non-standalone assignments, and some
+same-short-name enum cases. Textual-AST parsing and incomplete source locations
+remain implementation boundaries. These constraints motivate manual labels,
+held-out language cases, and matched multi-seed fuzzing comparisons as future
+work.
+
+\section{Conclusion}
+
+Clang AST declaration and type linkage improves the source-selection step of
+SGFuzz while preserving the original callback and STT runtime. Across five
+pre-registered C and C++ controls, the prototype preserved direct-enum behavior
+and recovered scoped, atomic, and anonymous-enum writes missed by regex
+selection. On IXWebSocket, it inserted five target callbacks where the regex
+condition inserted none, and an identical deterministic replay produced a
+non-root STT. The completed short sanitizer campaign further shows that the
+copied, instrumented target runs continuously without changing its upstream
+source.
+
+These findings establish improved instrumentation fidelity and end-to-end
+feasibility, not superior fuzzing effectiveness. A complete comparison should
+use matched corpora, seeds, CPU allocation, and trial budgets, then report STT
+growth, edge coverage, executions per second, peak memory, and deduplicated
+crashes with uncertainty intervals.
+
+\section*{Individual Contributions and Attribution}
+
+Will D'Andrade developed the project framing and AST-aware direction, organized
+the report, and designed the evaluation questions. Jose Luis Gonzalez Paniagua
+implemented the AST detector and copy-only instrumenter, created the regression
+cases and runners, and collected the evidence. Both authors reviewed the
+evidence-backed claims. Reused SGFuzz components remain attributed to the
+original project~\cite{ba2022}; material AI assistance and verification are
+documented in \texttt{notes/ai-use.md}.
+
+\begin{thebibliography}{00}
+\bibitem{ba2022} J. Ba, M. B\"ohme, Z. Mirzamomen, and A. Roychoudhury,
+``Stateful Greybox Fuzzing,'' in \emph{Proc. 31st USENIX Security Symp.},
+2022, pp. 3255--3272. [Online]. Available:
+\url{https://www.usenix.org/conference/usenixsecurity22/presentation/ba}
+\bibitem{clangast} Clang Project, ``Introduction to the Clang AST,''
+\emph{Clang Documentation}. [Online]. Available:
+\url{https://clang.llvm.org/docs/IntroductionToTheClangAST.html}
+\bibitem{ixwebsocket} Machine Zone, ``IXWebSocket,'' GitHub repository.
+[Online]. Available: \url{https://github.com/machinezone/IXWebSocket}
+\bibitem{h2o} H2O Project, ``H2O: The Optimized HTTP Server,'' GitHub
+repository. [Online]. Available: \url{https://github.com/h2o/h2o}
+\bibitem{libfuzzer} LLVM Project, ``libFuzzer: A Library for Coverage-Guided
+Fuzz Testing,'' \emph{LLVM Documentation}. [Online]. Available:
+\url{https://llvm.org/docs/LibFuzzer.html}
+\bibitem{artifact} J. L. Gonzalez Paniagua and W. D'Andrade,
+``ClangAST-SGFuzz artifact,'' 2026. [Online]. Available:
+\url{https://github.com/Jlg1061/clangAST-SGFuzz}
+\end{thebibliography}
+
+\end{document}

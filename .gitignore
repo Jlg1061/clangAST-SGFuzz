@@ -9,6 +9,9 @@ build/
 cmake-build-*/
 work/
 
+# Local LaTeX build products for the paper source
+paper/.build/
+
 # Local upstream checkouts, if placed inside this repository accidentally
 SGFuzz/
 IXWebSocket/
