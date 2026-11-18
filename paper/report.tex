@@ -7,9 +7,11 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{tikz}
 \usepackage{xurl}
 \usepackage{url}
 \usepackage{hyperref}
+\usetikzlibrary{arrows.meta,positioning}
 \hypersetup{hidelinks}
 \urlstyle{same}
 
@@ -132,13 +134,40 @@ in the accompanying repository~\cite{artifact}.
 
 \subsection{Regression controls}
 
-Five pre-registered controls compare the regex and AST selectors using fixed
-seed inputs and \texttt{-runs=0}: a direct unscoped C++ enum, a scoped C++
-enum, an atomic enum, a direct C enum, and an anonymous C enum. The first and
-fourth are preservation controls; the remaining cases test forms that the
-regex selector misses. For each condition we record callback sites, STT nodes,
-and leaves. The expected outputs were fixed before execution in
+Five pre-registered controls compare the regex and AST selectors with the same
+fixed seed inputs and deterministic \texttt{-runs=0} replay. As
+Figure~\ref{fig:controls} shows, the direct unscoped C++ and direct C enum
+cases are \emph{preservation controls}: they check that AST selection retains
+behavior the regex selector already supports. The scoped and atomic C++ cases
+are \emph{C++ recovery controls}, while the anonymous C enum is a \emph{C
+recovery control}; these three forms were intentionally selected because the
+regex selector leaves them uninstrumented. For every condition, we compare
+inserted callback sites, STT nodes (including the root), and distinct STT
+leaves. The expected outcome for each case was recorded before execution in
 \texttt{experiments/regression-controls.json}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  >=Stealth,
+  group/.style={draw=black!70, rounded corners=1pt, align=center,
+                font=\scriptsize, text width=1.55cm, minimum height=0.92cm},
+  metrics/.style={draw=black!70, rounded corners=1pt, align=center,
+                  font=\scriptsize, text width=1.55cm, minimum height=1.26cm},
+  arrow/.style={->, thick}
+]
+\node[group] (preserve) {\textbf{Preserve}\\direct unscoped C++\\direct C enum};
+\node[group, right=0.24cm of preserve] (cpp) {\textbf{C++ recovery}\\scoped enum\\atomic enum};
+\node[group, right=0.24cm of cpp] (c) {\textbf{C recovery}\\anonymous\\C enum};
+\node[metrics, below=0.48cm of cpp] (measure) {\textbf{Same replay}\\callback sites\\STT nodes and leaves};
+\draw[arrow] (preserve.south) |- (measure.west);
+\draw[arrow] (cpp.south) -- (measure.north);
+\draw[arrow] (c.south) |- (measure.east);
+\end{tikzpicture}
+\caption{Regression-control categories. The first group checks retained
+baseline behavior; the latter two test syntax forms missed by regex selection.}
+\label{fig:controls}
+\end{figure}
 
 \subsection{Real-project checks}
 
